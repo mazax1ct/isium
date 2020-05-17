@@ -3,6 +3,9 @@
   line-height: 21px
   margin-bottom: 12px
 
+  &:last-child
+    margin-bottom: 0
+
   &__text
     color: $secondary-color
     display: block
@@ -17,3 +20,92 @@
   line-height: 18px
   padding: 5px 0
   text-decoration: underline
+
+.form-title
+  color: $secondary-color
+  line-height: 21px
+  margin-bottom: 12px
+
+.choose-group
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 13px
+
+.option
+  cursor: pointer
+  margin-right: 8px
+  margin-bottom: 8px
+  position: relative
+
+  input[type="checkbox"],
+  input[type="radio"]
+    position: absolute
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    width: 1px
+
+    &:checked + .option__text
+      color: #fff
+
+    &:checked + .option__text--type_1
+      background-color: #AE7ABB
+      border-color: #AE7ABB
+
+    &:checked + .option__text--type_2
+      background-color: #E36F72
+      border-color: #E36F72
+
+    &:checked + .option__text--type_3
+      background-color: #39A8BB
+      border-color: #39A8BB
+
+    &:checked + .option__text--type_4
+      background-color: #B4C25C
+      border-color: #B4C25C
+
+    &:checked + .option__text--type_5
+      background-color: #F2C94C
+      border-color: #F2C94C
+
+  &__text
+    border: 2px solid $text-color
+    border-radius: 8px
+    color: $text-color
+    display: inline-block
+    font-size: 9px
+    font-weight: 600
+    height: 24px
+    line-height: 16px
+    min-width: 70px
+    padding: 3px 8px 3px
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s
+    text-transform: uppercase
+    text-align: center
+    vertical-align: top
+
+.info
+  display: flex
+  margin-left: -4px
+  margin-right: -4px
+
+  &__text,
+  &__photo
+    padding-left: 4px
+    padding-right: 4px
+
+  &__text
+    width: 67%
+
+  &__photo
+    width: 33%
+
+.foto-upload
+  background-color: #fff
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.5'%3E%3Ccircle cx='13' cy='13' r='12' stroke='%236F7075'/%3E%3Cline x1='7.40039' y1='12.9003' x2='18.6004' y2='12.9003' stroke='%236F7075'/%3E%3Cline x1='12.9004' y1='18.6002' x2='12.9004' y2='7.40022' stroke='%236F7075'/%3E%3C/g%3E%3C/svg%3E")
+  border-radius: 8px
+  border: none
+  cursor: pointer
+  height: 110px
