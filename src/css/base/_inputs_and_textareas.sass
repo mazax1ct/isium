@@ -1,29 +1,28 @@
 .input,
 .textarea
   background-color: #fff
-  border: 1px solid #ceced0
-  border-radius: 5px
-  color: inherit
+  border: 1px solid #fff
+  border-radius: 8px
+  color: $text-color
+  line-height: 21px
+  transition: border-color 0.3s
   width: 100%
 
   &:focus
-    border-color: #303032
-    box-shadow: 0 0 5px 2px #00d123
+    border-color: darken(#EFEEEE, 5%)
 
   &.error
     border-color: #ff0000
 
     &:focus
       border-color: #ff0000
-      box-shadow: 0 0 5px 2px #ff0000
 
   &:disabled
     opacity: 0.5
 
 .input
-  height: 50px
-  line-height: 50px
-  padding: 0 10px
+  height: 36px
+  padding: 9px 9px 7px
 
 .textarea
   height: 100px

@@ -1,6 +1,7 @@
 .checkbox-label,
 .radio-label
   display: block
+  line-height: 18px
   margin-bottom: 20px
   position: relative
   padding-left: 28px
@@ -23,29 +24,44 @@
     clip: rect(0 0 0 0)
     width: 1px
 
-.checkbox-icon,
-.radio-icon
-  border: 1px solid #cecece
-  cursor: pointer
-  height: 22px
-  left: 0
-  line-height: 20px
-  position: absolute
-  top: 0
-  text-align: center
-  width: 22px
+  &__icon
+    border: 1px solid $main-color
+    cursor: pointer
+    height: 16px
+    left: 0
+    position: absolute
+    top: 0
+    text-align: center
+    width: 16px
 
-.checkbox-icon
-  border-radius: 5px
+  &__text
+    cursor: pointer
+    display: block
+    line-height: 18px
+    padding-top: 1px
 
-.radio-icon
-  border-radius: 50%
-  font-size: 12px
-  top: -1px
+.checkbox-label
+  &__icon
+    border-radius: 3px
 
-input[type="checkbox"]:checked + .checkbox-icon:before
+  &--dark
+    .checkbox-label__icon
+      border-color: #04405A
+
+    input[type="checkbox"]:checked + .checkbox-label__icon
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2222 0H1.77778C0.8 0 0 0.8 0 1.77778V14.2222C0 15.2 0.8 16 1.77778 16H14.2222C15.2 16 16 15.2 16 14.2222V1.77778C16 0.8 15.2 0 14.2222 0ZM6.22222 12.4444L1.77778 8.17094L3.02222 6.97436L6.22222 10.0513L12.9778 3.55556L14.2222 4.75214L6.22222 12.4444Z' fill='%2304405A'/%3E%3C/svg%3E%0A")
+
+.radio-label
+  &__icon
+    border-radius: 50%
+
+input[type="checkbox"]:checked + .checkbox-label__icon
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2222 0H1.77778C0.8 0 0 0.8 0 1.77778V14.2222C0 15.2 0.8 16 1.77778 16H14.2222C15.2 16 16 15.2 16 14.2222V1.77778C16 0.8 15.2 0 14.2222 0ZM6.22222 12.4444L1.77778 8.17094L3.02222 6.97436L6.22222 10.0513L12.9778 3.55556L14.2222 4.75214L6.22222 12.4444Z' fill='%2300BBD3'/%3E%3C/svg%3E%0A")
+  background-size: 15px 15px
+
+input[type="radio"]:checked + .radio-label__icon::before
   background-color: #000
-  border-radius: 3px
+  border-radius: 50%
   content: ""
   height: 14px
   left: 50%
@@ -54,36 +70,17 @@ input[type="checkbox"]:checked + .checkbox-icon:before
   transform: translate(-50%, -50%)
   width: 14px
 
-input[type="checkbox"]:focus + .checkbox-icon,
-input[type="checkbox"]:active + .checkbox-icon
+input[type="radio"]:focus + .radio-label__icon,
+input[type="radio"]:active + .radio-label__icon
   box-shadow: 0 0 0 2px #00d123
 
-input[type="radio"]:checked + .radio-icon:before
-  background-color: #000
-  border-radius: 50%
-  content: ""
-  height: 14px
-  left: 50%
-  position: absolute
-  top: 50%
-  transform: translate(-50%, -50%)
-  width: 14px
-
-input[type="radio"]:focus + .radio-icon,
-input[type="radio"]:active + .radio-icon
-  box-shadow: 0 0 0 2px #00d123
-
-.checkbox-text,
-.radio-text
-  cursor: pointer
-
-input[type="checkbox"]:disabled ~ .checkbox-text,
-input[type="checkbox"].disabled ~ .checkbox-text,
-input[type="checkbox"]:disabled ~ .checkbox-icon,
-input[type="checkbox"].disabled ~ .checkbox-icon,
-input[type="radio"]:disabled ~ .radio-text,
-input[type="radio"].disabled ~ .radio-text,
-input[type="radio"]:disabled ~ .radio-icon,
-input[type="radio"].disabled ~ .radio-icon
+input[type="checkbox"]:disabled ~ .checkbox-label__text,
+input[type="checkbox"].disabled ~ .checkbox-label__text,
+input[type="checkbox"]:disabled ~ .checkbox-label__icon,
+input[type="checkbox"].disabled ~ .checkbox-label__icon,
+input[type="radio"]:disabled ~ .radio-label__text,
+input[type="radio"].disabled ~ .radio-label__text,
+input[type="radio"]:disabled ~ .radio-label__icon,
+input[type="radio"].disabled ~ .radio-label__icon
   cursor: default
   opacity: 0.5

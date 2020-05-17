@@ -24,6 +24,33 @@
     //= template/header.html
 
     //= template/sidebar.html
+
+    <div class="popup">
+      <button class="popup__close" type="button" title="Закрыть">
+        <svg class="popup__close-icon" aria-hidden="true">
+          <use xlink:href="#close" />
+        </svg>
+      </button>
+      <p class="popup__title">Какие основные ценности вашей компании?</p>
+      <form action="">
+        <label class="form-label" for="inp_1">
+          <span class="form-label__text">Ценность 1</span>
+          <input id="inp_1" class="input" name="input_1" type="text" value="Качество доставки">
+        </label>
+        <label class="form-label" for="inp_2">
+          <span class="form-label__text">Ценность 2</span>
+          <input id="inp_2" class="input" name="input_2" type="text" value="Ассортимент товарного каталога">
+        </label>
+        <label class="form-label" for="inp_3">
+          <span class="form-label__text">Ценность 3</span>
+          <input id="inp_3" class="input" name="input_3" type="text" value="Удобство сайта">
+        </label>
+        <button class="add-field" type="button">Добавить ещё</button>
+        <div class="popup__save-block">
+          <button class="button button--wide" type="button">СОХРАНИТЬ</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   //= template/scripts.html

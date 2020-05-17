@@ -53,13 +53,27 @@
         <path d="M27,17.1H13c-0.8,0-1.5-0.7-1.5-1.5V13c0-0.8,0.7-1.5,1.5-1.5h14c0.8,0,1.5,0.7,1.5,1.5v2.6C28.5,16.4,27.8,17.1,27,17.1z M13,12.5c-0.3,0-0.5,0.2-0.5,0.5v2.6c0,0.3,0.2,0.5,0.5,0.5h14c0.3,0,0.5-0.2,0.5-0.5V13c0-0.3-0.2-0.5-0.5-0.5H13z" />
       </g>
     </symbol>
+    <symbol id="close" viewBox="0 0 14 14">
+      <path d="M14 1.4L12.6 0L7 5.6L1.4 0L0 1.4L5.6 7L0 12.6L1.4 14L7 8.4L12.6 14L14 12.6L8.4 7L14 1.4Z" />
+    </symbol>
   </svg>
 
   <div class="page__inner">
     <header class="header">
-        <div class="container">
-            Шапка 1
+      <div class="header__inner">
+        <div class="header__left">
+          <p class="header__title">Мои ценности</p>
+          <div class="header__info">
+            <p class="header__info-title">У вас 0 ценностей</p>
+            <label class="checkbox-label checkbox-label--dark" for="active_pref">
+              <input id="active_pref" name="active_pref" type="checkbox">
+              <span class="checkbox-label__icon"></span>
+              <span class="checkbox-label__text">Только активные</span>
+            </label>
+          </div>
         </div>
+        <button class="header__add-button button" type="button">ДОБАВИТЬ</button>
+      </div>
     </header>
 
     <div class="sidebar">
@@ -124,6 +138,33 @@
           </li>
         </ol>
       </nav>
+    </div>
+
+    <div class="popup">
+      <button class="popup__close" type="button" title="Закрыть">
+        <svg class="popup__close-icon" aria-hidden="true">
+          <use xlink:href="#close" />
+        </svg>
+      </button>
+      <p class="popup__title">Какие основные ценности вашей компании?</p>
+      <form action="">
+        <label class="form-label" for="inp_1">
+          <span class="form-label__text">Ценность 1</span>
+          <input id="inp_1" class="input" name="input_1" type="text" value="Качество доставки">
+        </label>
+        <label class="form-label" for="inp_2">
+          <span class="form-label__text">Ценность 2</span>
+          <input id="inp_2" class="input" name="input_2" type="text" value="Ассортимент товарного каталога">
+        </label>
+        <label class="form-label" for="inp_3">
+          <span class="form-label__text">Ценность 3</span>
+          <input id="inp_3" class="input" name="input_3" type="text" value="Удобство сайта">
+        </label>
+        <button class="add-field" type="button">Добавить ещё</button>
+        <div class="popup__save-block">
+          <button class="button button--wide" type="button">СОХРАНИТЬ</button>
+        </div>
+      </form>
     </div>
   </div>
 

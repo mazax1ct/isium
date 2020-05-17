@@ -1,26 +1,26 @@
 .button
-  background-color: #00c220
+  background-color: $main-color
   border: none
-  border-radius: 5px
+  border-radius: 4px
   color: #fff
   cursor: pointer
   display: inline-block
-  font-family: inherit
-  font-size: inherit
-  line-height: 18px
-  padding: 11px 14px
+  font-family: 'Biryani', Arial, sans-serif
+  font-size: 12px
+  font-weight: 600
+  height: 32px
+  line-height: 21px
+  padding: 7px 7px 4px
   text-decoration: none
   text-align: center
+  transition: background-color 0.3s
   vertical-align: middle
 
   &:hover,
-  &:active
-    background-color: #00d123
-    color: #fff
-
+  &:active,
   &:focus
-    box-shadow: 0 0 5px 2px #00d123
-    outline: 1px dotted #000
+    background-color: darken($main-color, 10%)
+    color: #fff
 
   &:disabled,
   &.disabled
@@ -29,3 +29,6 @@
 
     &:focus
       outline: none
+
+  &--wide
+    width: 100%
