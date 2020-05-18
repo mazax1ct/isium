@@ -1,5 +1,6 @@
 .sidebar
   background-color: #033A52
+  display: none
   height: 100%
   left: 0
   overflow-y: auto
@@ -9,6 +10,9 @@
   text-align: center
   width: 136px
   z-index: 1
+
+  @media(min-width: 700px)
+    display: block
 
   @media(min-height: 800px)
     display: flex
@@ -47,13 +51,20 @@
       background: darken(#033A52, 2.5%)
 
   &__logo
+    background-color: #fff
+    border-radius: 50%
+    height: 48px
     margin-bottom: 35px
     margin-left: auto
     margin-right: auto
+    overflow: hidden
     width: 48px
 
     @media(min-height: 1020px)
       margin-bottom: 55px
+
+    img
+      border-radius: 50%
 
 .menu
   @media(min-height: 800px)

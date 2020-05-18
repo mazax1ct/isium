@@ -31,11 +31,14 @@
   flex-wrap: wrap
   margin-bottom: 13px
 
-.option
+.option1
   cursor: pointer
   margin-right: 8px
   margin-bottom: 8px
   position: relative
+
+  &:last-child
+    margin-right: 0
 
   input[type="checkbox"],
   input[type="radio"]
@@ -45,40 +48,42 @@
     clip: rect(0 0 0 0)
     width: 1px
 
-    &:checked + .option__text
+    &:checked + .option1__text
       color: #fff
 
-    &:checked + .option__text--type_1
+    &:checked + .option1__text--type_1
       background-color: #AE7ABB
       border-color: #AE7ABB
 
-    &:checked + .option__text--type_2
+    &:checked + .option1__text--type_2
       background-color: #E36F72
       border-color: #E36F72
 
-    &:checked + .option__text--type_3
+    &:checked + .option1__text--type_3
       background-color: #39A8BB
       border-color: #39A8BB
 
-    &:checked + .option__text--type_4
+    &:checked + .option1__text--type_4
       background-color: #B4C25C
       border-color: #B4C25C
 
-    &:checked + .option__text--type_5
+    &:checked + .option1__text--type_5
       background-color: #F2C94C
       border-color: #F2C94C
 
   &__text
+    align-items: center
     border: 2px solid $text-color
     border-radius: 8px
     color: $text-color
-    display: inline-block
+    display: inline-flex
     font-size: 9px
     font-weight: 600
     height: 24px
+    justify-content: center
     line-height: 16px
     min-width: 70px
-    padding: 4px 8px 3px
+    padding: 6px 8px 3px
     transition: color 0.3s, background-color 0.3s, border-color 0.3s
     text-transform: uppercase
     text-align: center
@@ -224,12 +229,15 @@
     fill: #fff
     height: 72px
     opacity: 0.5
+    stroke: #fff
     stroke-width: 1px
+    transition: stroke 0.3s, opacity 0.3s
     width: 116px
 
   &__title
     display: block
     opacity: 0.5
+    transition: color 0.3s, opacity
     text-align: center
 
 .photos
@@ -252,3 +260,131 @@
     padding-left: 4px
     padding-right: 4px
     width: 25%
+
+.options3
+  margin-bottom: 12px
+
+  &:last-child
+    margin-bottom: 0
+
+  &__title
+    color: $secondary-color
+    font-size: 10px
+    font-weight: 300
+    line-height: 18px
+    margin-bottom: 3px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+
+.option2
+  cursor: pointer
+  display: block
+  margin-right: 8px
+  margin-bottom: 8px
+  position: relative
+
+  &:last-child
+    margin-right: 0
+
+  input[type="checkbox"],
+  input[type="radio"]
+    position: absolute
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    width: 1px
+
+    &:checked + .option2__text
+      background-color: $main-color
+      border-color: $main-color
+      color: #fff
+
+  &__text
+    align-items: center
+    border: 1px solid $text-color
+    border-radius: 4px
+    color: $text-color
+    display: inline-flex
+    font-size: 10px
+    height: 27px
+    justify-content: center
+    line-height: 13px
+    min-width: 27px
+    padding: 5px 0 3px
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s
+    text-align: center
+    vertical-align: top
+
+    &--type_2
+      min-width: 72px
+      padding: 5px 8px 3px
+
+    &--type_3
+      font-size: 11px
+      min-width: 60px
+      padding: 5px 8px 3px
+
+.two-questions
+  margin-bottom: 12px
+
+  @media(min-width: 700px)
+    display: flex
+    justify-content: space-between
+
+  &:last-child
+    margin-bottom: 0
+
+  .options3
+    @media(min-width: 700px)
+      margin-bottom: 0
+
+.options4
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin-left: -4px
+    margin-right: -4px
+
+  &__item
+    margin-bottom: 8px
+    padding-left: 4px
+    padding-right: 4px
+    width: 50%
+
+  &__title
+    color: $secondary-color
+    font-size: 10px
+    font-weight: 300
+    line-height: 18px
+    margin-top: 11px
+
+.option3
+  cursor: pointer
+  display: block
+  position: relative
+
+  input[type="checkbox"],
+  input[type="radio"]
+    position: absolute
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    width: 1px
+
+    &:checked + .option3__image img
+      box-shadow: 0 0 0 4px $main-color
+
+  &__image
+    border-radius: 4px
+    display: block
+    outline: 4px solid transparent
+
+    text-align: center
+    vertical-align: top
+
+    img
+      border-radius: 4px
+      box-shadow: 0 0 4px 0 transparent
+      transition: box-shadow 0.3s
