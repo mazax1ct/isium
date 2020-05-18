@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <title>Мои новости. Лента глазами клиента</title>
+  <title>Мои новости. Создание опросов и новостей по ценностям</title>
 
   <meta name="description" content="">
 
@@ -160,6 +160,99 @@
           </li>
         </ol>
       </nav>
+    </div>
+
+    <div class="popup">
+      <button class="popup__close" type="button" title="Закрыть">
+        <svg class="popup__close-icon" aria-hidden="true">
+          <use xlink:href="#close" />
+        </svg>
+      </button>
+      <form action="">
+        <p class="form-title">Цель публикации</p>
+        <div class="choose-group">
+          <label class="option" for="inp_1">
+            <input id="inp_1" name="option_1" type="checkbox" value="">
+            <span class="option__text option__text--type_1">Оценка</span>
+          </label>
+          <label class="option" for="inp_2">
+            <input id="inp_2" name="option_2" type="checkbox" value="">
+            <span class="option__text option__text--type_2">Опрос</span>
+          </label>
+          <label class="option" for="inp_3">
+            <input id="inp_3" name="option_3" type="checkbox" value="">
+            <span class="option__text option__text--type_3">Отзыв</span>
+          </label>
+          <label class="option" for="inp_4">
+            <input id="inp_4" name="option_4" type="checkbox" value="">
+            <span class="option__text option__text--type_4">портрет клиента</span>
+          </label>
+          <label class="option" for="inp_5">
+            <input id="inp_5" name="option_5" type="checkbox" value="">
+            <span class="option__text option__text--type_5">фотоопрос</span>
+          </label>
+        </div>
+        <label class="form-label">
+          <span class="form-label__text">К какой ценности относится</span>
+          <select class="js-select" style="width: 100%">
+            <option>Ассортимент товарного каталога</option>
+            <option>Качество доставки</option>
+            <option>Удобство сайта</option>
+          </select>
+        </label>
+        <label class="form-label" for="inp_1">
+          <span class="form-label__text">Заголовок</span>
+          <input id="inp_1" class="input" name="input_1" type="text" value="Подарки стали вкуснее">
+        </label>
+        <div class="info">
+          <div class="info__inner">
+            <div class="info__text">
+              <label class="form-label" for="inp_2">
+                <span class="form-label__text">Описание</span>
+                <textarea id="inp_2" class="textarea">Большая часть подарков в нашем каталоге – это подарки с мёдом. Несколько лет мы развивали это направление и заботились о пчёлах на наших пасеках. В этом году пчёлы стали счастливее, что отразилось на вкусе нашего мёда.</textarea>
+              </label>
+            </div>
+            <div class="info__photo">
+              <label class="form-label">
+                <span class="form-label__text">Описание</span>
+                <div class="foto-upload"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <label class="checkbox-label" for="q_1">
+          <input id="q_1" name="q_1" type="checkbox" checked>
+          <span class="checkbox-label__icon"></span>
+          <span class="checkbox-label__text">Голосование ДА / НЕТ</span>
+        </label>
+        <label class="form-label form-label--type_2" for="inp_2">
+          <input id="inp_2" class="input input--type_2" name="input_2" type="text" value="Вы уже попробовали?">
+        </label>
+        <label class="checkbox-label" for="q_2">
+          <input id="q_2" name="q_2" type="checkbox" checked>
+          <span class="checkbox-label__icon"></span>
+          <span class="checkbox-label__text">10-балльная шкала оценки</span>
+        </label>
+        <label class="form-label form-label--type_2" for="inp_3">
+          <input id="inp_3" class="input input--type_2" name="input_3" type="text" value="На сколько вы оцениваете вкус мёда?">
+        </label>
+        <label class="checkbox-label" for="q_3">
+          <input id="q_3" name="q_3" type="checkbox" checked>
+          <span class="checkbox-label__icon"></span>
+          <span class="checkbox-label__text">Добавить вопрос</span>
+        </label>
+        <label class="form-label form-label--type_2" for="inp_4">
+          <input id="inp_4" class="input input--type_2" name="input_4" type="text" value="Какой мёд предпочитаете в это время года?">
+        </label>
+        <div class="popup__publish-block">
+          <label class="checkbox-label" for="draft">
+            <input id="draft" name="draft" type="checkbox" checked>
+            <span class="checkbox-label__icon"></span>
+            <span class="checkbox-label__text">Черновик</span>
+          </label>
+          <button class="button" type="button">ОПУБЛИКОВАТЬ</button>
+        </div>
+      </form>
     </div>
   </div>
 

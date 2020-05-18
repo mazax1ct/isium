@@ -26,7 +26,7 @@
   line-height: 21px
   margin-bottom: 12px
 
-.choose-group
+.options
   display: flex
   flex-wrap: wrap
   margin-bottom: 13px
@@ -78,16 +78,37 @@
     height: 24px
     line-height: 16px
     min-width: 70px
-    padding: 3px 8px 3px
+    padding: 4px 8px 3px
     transition: color 0.3s, background-color 0.3s, border-color 0.3s
     text-transform: uppercase
     text-align: center
     vertical-align: top
 
+.select-wrapper
+  position: relative
+  z-index: 1
+
 .info
-  display: flex
-  margin-left: -4px
-  margin-right: -4px
+  margin-bottom: 30px
+  padding-bottom: 34px
+  position: relative
+
+  &::after
+    background-color: #EFEEEE
+    box-shadow: 0 4px 4px 0 rgba(#fff, 0.5), inset -4px -4px 16px 0 rgba(#fff, 0.5), inset 4px 4px 16px 0 rgba(#B4B3B1, 0.75)
+    bottom: 0
+    content: ''
+    height: 4px
+    display: block
+    left: 0
+    position: absolute
+    top: auto
+    width: 100%
+
+  &__inner
+    display: flex
+    margin-left: -4px
+    margin-right: -4px
 
   &__text,
   &__photo
@@ -109,3 +130,125 @@
   border: none
   cursor: pointer
   height: 110px
+
+  &--small
+    background-size: 16px 16px
+    height: 72px
+
+  &.is-upload
+    background-size: cover
+
+  &.disabled
+    background-color: rgba(#fff, 0.5)
+    cursor: default
+
+.questions-list
+  list-style: none
+  margin: 0
+  padding: 0
+
+  &__item
+    margin-bottom: 23px
+
+    &:last-child
+      margin-bottom: 0
+
+.options2
+  margin-top: 20px
+
+  @media(min-width: 700px)
+    padding-left: 28px
+
+  &__title
+    color: $secondary-color
+    line-height: 18px
+    margin-bottom: 5px
+
+  &__inner
+    display: flex
+    flex-wrap: wrap
+    margin-left: -4px
+    margin-right: -4px
+    margin-bottom: 10px
+
+  &__item
+    margin-bottom: 8px
+    padding-left: 4px
+    padding-right: 4px
+    width: 50%
+
+    @media(min-width: 700px)
+      width: 33.33333%
+
+.mosaic-types
+  margin-bottom: 20px
+
+  @media(min-width: 700px)
+    padding-left: 28px
+
+  &__title
+    color: $secondary-color
+    line-height: 18px
+    margin-bottom: 9px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+
+  &__item
+    max-width: 160px
+    width: 50%
+
+.mosaic-type
+  cursor: pointer
+  display: block
+  max-width: 116px
+  position: relative
+
+  input[type="radio"]
+    position: absolute
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    width: 1px
+
+    &:checked + .mosaic-type__svg
+      opacity: 1
+      stroke: $main-color
+
+    &:checked ~ .mosaic-type__title
+      color: $secondary-color
+      opacity: 1
+
+  &__svg
+    fill: #fff
+    height: 72px
+    opacity: 0.5
+    stroke-width: 1px
+    width: 116px
+
+  &__title
+    display: block
+    opacity: 0.5
+    text-align: center
+
+.photos
+  @media(min-width: 700px)
+    padding-left: 28px
+
+  &__title
+    color: $secondary-color
+    line-height: 18px
+    margin-bottom: 9px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin-left: -4px
+    margin-right: -4px
+
+  &__item
+    max-width: 124px
+    padding-left: 4px
+    padding-right: 4px
+    width: 25%

@@ -103,8 +103,18 @@
 
 $(document).ready(function () {
   //кастомный селект
-  $('.js-select').select2({
-    minimumResultsForSearch: Infinity,
-    dropdownPosition: 'below'
-  });
+	$('.js-select').each(function() {
+   var $p = $(this).closest('.select-wrapper');
+   $(this).select2({
+		 minimumResultsForSearch: Infinity,
+     dropdownPosition: 'below',
+     dropdownParent: $p
+   });
+	});
+});
+
+//закрытие попапа
+$(document).on('click', '.js-popup-close', function () {
+	$.fancybox.close();
+	return false;
 });
