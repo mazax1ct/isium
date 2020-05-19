@@ -161,7 +161,7 @@
 .options2
   margin-top: 20px
 
-  @media(min-width: 700px)
+  @media(min-width: 768px)
     padding-left: 28px
 
   &__title
@@ -182,13 +182,13 @@
     padding-right: 4px
     width: 50%
 
-    @media(min-width: 700px)
+    @media(min-width: 768px)
       width: 33.33333%
 
 .mosaic-types
   margin-bottom: 20px
 
-  @media(min-width: 700px)
+  @media(min-width: 768px)
     padding-left: 28px
 
   &__title
@@ -241,7 +241,7 @@
     text-align: center
 
 .photos
-  @media(min-width: 700px)
+  @media(min-width: 768px)
     padding-left: 28px
 
   &__title
@@ -329,16 +329,27 @@
 .two-questions
   margin-bottom: 12px
 
-  @media(min-width: 700px)
+  @media(min-width: 768px)
     display: flex
     justify-content: space-between
 
   &:last-child
     margin-bottom: 0
 
+    @media(min-width: 768px)
+      flex-shrink: 0
+
   .options3
-    @media(min-width: 700px)
+    @media(min-width: 768px)
       margin-bottom: 0
+
+    &:first-child
+      @media(min-width: 768px)
+        padding-right: 20px
+
+    &:last-child
+      @media(min-width: 768px)
+        flex-shrink: 0
 
 .options4
   &__list

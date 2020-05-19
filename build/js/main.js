@@ -111,10 +111,38 @@ $(document).ready(function () {
      dropdownParent: $p
    });
 	});
+
+	//кнопка "наверх"
+	var btn = $('#go-top');
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+      btn.addClass('is-active');
+    } else {
+      btn.removeClass('is-active');
+    }
+  });
+
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
 });
 
 //закрытие попапа
 $(document).on('click', '.js-popup-close', function () {
 	$.fancybox.close();
+	return false;
+});
+
+//открытие сайдбара
+$(document).on('click', '.js-sidebar-toggler', function () {
+	$('.sidebar').toggleClass('is-open');
+	return false;
+});
+
+//открытие меню аккаунта
+$(document).on('click', '.js-head-toggler', function () {
+	$('.head').toggleClass('is-open');
 	return false;
 });

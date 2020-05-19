@@ -1,25 +1,26 @@
 .sidebar
   background-color: #033A52
-  display: none
+  display: flex
+  flex-direction: column
   height: 100%
-  left: 0
+  left: -60px
   overflow-y: auto
   position: fixed
-  padding-top: 20px
+  padding-top: 80px
   top: 0
   text-align: center
-  width: 136px
-  z-index: 1
+  transition: left 0.3s
+  width: 60px
+  z-index: 2
 
-  @media(min-width: 700px)
-    display: block
+  &.is-open
+    left: 0
 
-  @media(min-height: 800px)
-    display: flex
-    flex-direction: column
-
-  @media(min-height: 1020px)
+  @media(min-width: 768px)
+    left: 0
     padding-top: 40px
+    width: 136px
+    z-index: 3
 
   @media(min-width: 1200px)
     scrollbar-width: thin
@@ -53,12 +54,20 @@
   &__logo
     background-color: #fff
     border-radius: 50%
+    border: none
+    cursor: pointer
+    display: none
     height: 48px
+    min-height: 48px
     margin-bottom: 35px
     margin-left: auto
     margin-right: auto
     overflow: hidden
+    padding: 0
     width: 48px
+
+    @media(min-width: 768px)
+      display: block
 
     @media(min-height: 1020px)
       margin-bottom: 55px
@@ -86,7 +95,7 @@
   &__list-item
     margin-bottom: 20px
 
-    @media(min-height: 1020px)
+    @media(min-width: 768px) and (min-height: 1020px)
       margin-bottom: 40px
 
     &:last-child
