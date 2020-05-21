@@ -130,7 +130,7 @@ $(document).ready(function () {
 
 	//запуск плавающего фильтра
   if ($(".js-content-with-sticky").length) {
-    if ($("body").width() >= 1199) {
+    if ($("body").innerWidth() > 1199) {
       $(".js-sticky-block").trigger("sticky_kit:detach");
       setTimeout(function() {
         $(".js-sticky-block").stick_in_parent({
@@ -144,7 +144,7 @@ $(document).ready(function () {
 //открепляем и перезапускаем прилипающий блок при резайзе
 $(window).resize(function() {
   if ($(".js-content-with-sticky").length) {
-    if ($("body").width() >= 1199) {
+    if ($("body").innerWidth() > 1199) {
       $(".js-sticky-block").trigger("sticky_kit:detach");
       setTimeout(function() {
         $(".js-sticky-block").stick_in_parent({
@@ -158,7 +158,7 @@ $(window).resize(function() {
 //открепляем и перезапускаем прилипающий блок при повороте устройства
 $(window).on("orientationchange", function(event) {
   if ($(".js-content-with-sticky").length) {
-    if ($("body").width() >= 768) {
+    if ($("body").innerWidth() > 1199) {
       $(".js-sticky-block").trigger("sticky_kit:detach");
       setTimeout(function() {
         $(".js-sticky-block").stick_in_parent({
@@ -211,8 +211,8 @@ $(document).on('click', '.js-filter-toggler', function () {
   } else {
     bodyScrollLock.enableBodyScroll(targetElement);
   }
-	if($('body').width() < 1200) {
-		$('.go-top').toggle();
+	if($('body').innerWidth() < 1200) {
+		$('.go-top').toggleClass('hidden');
 	}
 	return false;
 });

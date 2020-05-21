@@ -34,7 +34,7 @@
       background-color: transparent
       display: block
       height: auto
-      margin-left: auto
+      min-width: 286px
       padding-left: 30px
       padding-top: 0
       position: static
@@ -48,7 +48,10 @@
   max-width: 256px
   margin-left: auto
   margin-right: auto
-  margin-bottom: 30px
+  padding-bottom: 5px
+
+  @media(min-width: 1200px)
+    min-width: 256px
 
   &__title
     color: $main-color
