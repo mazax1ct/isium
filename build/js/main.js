@@ -127,6 +127,46 @@ $(document).ready(function () {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });
+
+	//запуск плавающего фильтра
+  if ($(".js-content-with-sticky").length) {
+    if ($("body").width() >= 1199) {
+      $(".js-sticky-block").trigger("sticky_kit:detach");
+      setTimeout(function() {
+        $(".js-sticky-block").stick_in_parent({
+          offset_top: 190
+        });
+      }, 100);
+    }
+  }
+});
+
+//открепляем и перезапускаем прилипающий блок при резайзе
+$(window).resize(function() {
+  if ($(".js-content-with-sticky").length) {
+    if ($("body").width() >= 1199) {
+      $(".js-sticky-block").trigger("sticky_kit:detach");
+      setTimeout(function() {
+        $(".js-sticky-block").stick_in_parent({
+          offset_top: 190
+        });
+      }, 100);
+    }
+  }
+});
+
+//открепляем и перезапускаем прилипающий блок при повороте устройства
+$(window).on("orientationchange", function(event) {
+  if ($(".js-content-with-sticky").length) {
+    if ($("body").width() >= 768) {
+      $(".js-sticky-block").trigger("sticky_kit:detach");
+      setTimeout(function() {
+        $(".js-sticky-block").stick_in_parent({
+          offset_top: 190
+        });
+      }, 100);
+    }
+  }
 });
 
 //закрытие попапа
@@ -157,5 +197,22 @@ $(document).on('click', '.js-manage-toggler', function () {
 $(document).on('click', '.js-read-more', function () {
 	$(this).closest('.comment__text').find('span').show();
 	$(this).css('display', 'none');
+	return false;
+});
+
+//открытие блока с фильтром публикаций
+var targetElement = $('.articles__filter');
+
+$(document).on('click', '.js-filter-toggler', function () {
+	$(this).toggleClass("is-active");
+  $('.articles__filter').toggleClass('is-open');
+  if($(this).hasClass('is-active')) {
+    bodyScrollLock.disableBodyScroll(targetElement);
+  } else {
+    bodyScrollLock.enableBodyScroll(targetElement);
+  }
+	if($('body').width() < 1200) {
+		$('.go-top').toggle();
+	}
 	return false;
 });
