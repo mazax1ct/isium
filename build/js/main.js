@@ -146,3 +146,16 @@ $(document).on('click', '.js-head-toggler', function () {
 	$('.head').toggleClass('is-open');
 	return false;
 });
+
+//открытие блока управления публикацией
+$(document).on('click', '.js-manage-toggler', function () {
+	$(this).closest('.article__manage-block').find('.manage-popover').toggleClass('is-open');
+	return false;
+});
+
+//открытие скрытого текста в комментарии
+$(document).on('click', '.js-read-more', function () {
+	$(this).closest('.comment__text').find('span').show();
+	$(this).css('display', 'none');
+	return false;
+});

@@ -114,7 +114,14 @@
           </div>
           <label class="form-label" for="comment">
             <span class="form-label__text">Какой мёд предпочитаете в это время года?</span>
-            <input id="comment" class="input" name="comment" type="text" value="" placeholder="Напишите комментарий...">
+            <span class="form-label__container">
+              <input id="comment" class="input" name="comment" type="text" value="" placeholder="Напишите комментарий...">
+              <button class="submit" type="submit" title="Отправить">
+                <svg class="submit__icon" aria-hidden="true">
+                  <use xlink:href="#submit" />
+                </svg>
+              </button>
+            </span>
           </label>
         </form>
       </div>
@@ -278,9 +285,123 @@
           </div>
           <label class="form-label" for="comment_1">
             <span class="form-label__text">В каком варианте вам понравилась бы данная услуга?</span>
-            <input id="comment_1" class="input" name="comment_1" type="text" value="Мне бы понравилось, если бы это был мой личный дрон" placeholder="Напишите комментарий...">
+            <span class="form-label__container">
+              <input id="comment_1" class="input" name="comment_1" type="text" value="Мне бы понравилось, если бы это был мой личный дрон" placeholder="Напишите комментарий...">
+              <button class="submit" type="submit" title="Отправить">
+                <svg class="submit__icon" aria-hidden="true">
+                  <use xlink:href="#submit" />
+                </svg>
+              </button>
+            </span>
           </label>
         </form>
+      </div>
+      <div class="article">
+        <div class="article__top">
+          <p class="article__theme">Качество доставки</p>
+        </div>
+        <div class="article__title-block">
+          <h2 class="article__title">Доставка дронами</h2>
+          <div class="article__manage-block">
+            <button class="js-manage-toggler article__manage-button" type="button" title="Действия">
+              <svg class="article__manage-button-icon" aria-hidden="true">
+                <use xlink:href="#kebab" />
+              </svg>
+            </button>
+            <div class="article__manage-dropdown manage-popover">
+              <ul class="manage-popover__list">
+                <li><a class="manage-popover__button" href="#">Перейти в подробную аналитику</a></li>
+                <li><a class="manage-popover__button" href="#">Редактировать</a></li>
+                <li><a class="manage-popover__button" href="#">Удалить</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="article__date">25.04.2020 19:50</p>
+        <div class="article__preview-text">
+          <p>Мы решили, что можно запустить доставку дронами. Как бы вы отнеслись к тому, что летающие роботы будут преследовать вас и стучаться к вам в окна, а курьеры останутся без работы?</p>
+        </div>
+        <div class="article__image"><img src="images/content/img_7.jpg" alt="Альт картинки"></div>
+        <div class="stats">
+          <p class="stats__item">
+            <span class="stats__item-num">120</span>
+            <span class="stats__item-title">Почти не вгоняет</span>
+          </p>
+          <p class="stats__item">
+            <span class="stats__item-num">20</span>
+            <span class="stats__item-title">Слегка вгоняет</span>
+          </p>
+          <p class="stats__item">
+            <span class="stats__item-num">90</span>
+            <span class="stats__item-title">Мне всё равно</span>
+          </p>
+          <p class="stats__item stats__item--comments">
+            <span class="stats__item-num">50</span>
+            <span class="stats__item-title">Комментарии</span>
+          </p>
+        </div>
+        <div class="comment">
+          <p class="comment__top">
+            <span class="comment__author">Вектор</span>
+            <span class="comment__date">25 апреля 2020</span>
+          </p>
+          <p class="comment__text">Мне бы понравилось, если бы это был мой личный дрон</p>
+          <div class="comment__button-block">
+            <button class="comment__answer-button" type="button">Ответить ещё</button>
+          </div>
+        </div>
+        <div class="comment-answer">
+          <p class="comment-answer__top">
+            <span class="comment-answer__author"><span class="comment-answer__logo"><img src="images/logo.png" alt="Happy Partner"></span>Happy Partner</span>
+            <span class="comment-answer__date">25 апреля 2020</span>
+          </p>
+          <p class="comment-answer__text">Теперь мы может передать подарок с вашим дроном. Для этого вам надо зарегистрировать дрона в нашей системе, заполнив карточку «Личный курьер», и подписать отказ от претензий на случай, если ваш дрон будете перехвачен другими дронами или пострадает в пути. *Обратите внимание на ограничение по весу для доставки дронами.</p>
+        </div>
+        <div class="comment">
+          <p class="comment__top">
+            <span class="comment__author">Анима</span>
+            <span class="comment__date">25 апреля 2020</span>
+          </p>
+          <p class="comment__text">Это чудовищно! Я не смогу без страха подойти к окну.</p>
+          <div class="comment__button-block">
+            <button class="comment__answer-button" type="button">Ответить</button>
+          </div>
+        </div>
+        <div class="comment">
+          <p class="comment__top">
+            <span class="comment__author">Трактор</span>
+            <span class="comment__date">25 апреля 2020</span>
+          </p>
+          <p class="comment__text">Все беды от современных технологий. </p>
+          <div class="comment__button-block">
+            <button class="comment__answer-button" type="button">Ответить</button>
+          </div>
+        </div>
+        <div class="comment">
+          <p class="comment__top">
+            <span class="comment__author">Гигант</span>
+            <span class="comment__date">25 апреля 2020</span>
+          </p>
+          <p class="comment__text">Отличная идея! Жду когда у вас появится опция “доставка роботом-андроидом”.</p>
+          <div class="comment__button-block">
+            <button class="comment__answer-button" type="button">Ответить</button>
+          </div>
+        </div>
+        <div class="comment">
+          <p class="comment__top">
+            <span class="comment__author">Друг</span>
+            <span class="comment__date">25 апреля 2020</span>
+          </p>
+          <p class="comment__text">
+            Курьеры не останутся без работы. Человеческий фактор никто не отменял. И пока роботы заменят человека, пройдёт ещё такое количество лет, что наше поколение точно не доживёт...
+            <button class="js-read-more read-more" type="button">Читать дальше</button>
+            <span style="display: none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sint repellat deleniti assumenda veniam ipsum illo iure laboriosam, officia amet cumque rem consectetur ducimus ratione, quidem consequuntur, numquam maxime eos?</span>
+          </p>
+          <div class="comment__button-block">
+            <button class="comment__answer-button" type="button">Ответить</button>
+          </div>
+        </div>
+        <p class="text-center"><button class="show-comments" type="button">Показать ещё 5 комментариев</button></p>
       </div>
     </div>
   </div>

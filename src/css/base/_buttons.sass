@@ -1,25 +1,26 @@
 .button
   background-color: $main-color
-  border: none
+  border: 1px solid $main-color
   border-radius: 4px
   color: #fff
   cursor: pointer
   display: inline-block
   font-family: 'Biryani', Arial, sans-serif
   font-size: 12px
-  font-weight: 600
+  font-weight: 400
   height: 32px
   line-height: 21px
-  padding: 7px 7px 4px
+  padding: 4px 7px
   text-decoration: none
   text-align: center
-  transition: background-color 0.3s
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s
   vertical-align: middle
 
   &:hover,
   &:active,
   &:focus
     background-color: darken($main-color, 10%)
+    border-color: darken($main-color, 10%)
     color: #fff
 
   &:disabled,
@@ -29,6 +30,18 @@
 
     &:focus
       outline: none
+
+  &--transparent
+    background-color: transparent
+    border-color: $text-color
+    color: $text-color
+
+    &:hover,
+    &:active,
+    &:focus
+      background-color: $main-color
+      border-color: $main-color
+      color: #fff
 
   &--wide
     width: 100%

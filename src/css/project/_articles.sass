@@ -33,6 +33,7 @@
 
   &__top
     color: $secondary-color
+    font-weight: 300
     line-height: 18px
 
     @media(min-width: 768px)
@@ -56,11 +57,76 @@
     @media(min-width: 768px)
       max-width: 200px
 
+  &__title-block
+    display: flex
+    justify-content: space-between
+
+  &__manage-block
+    padding-top: 4px
+    position: relative
+
+    .article__title
+      padding-right: 20px
+
+  &__manage-button
+    align-items: center
+    background-color: transparent
+    border: none
+    cursor: pointer
+    display: flex
+    height: 30px
+    justify-content: center
+    padding: 0
+    width: 30px
+
+    &:hover,
+    &:focus,
+    &.is-active
+      .article__manage-button-icon
+        fill: darken(#C4C4C4, 10%)
+
+  &__manage-button-icon
+    fill: #C4C4C4
+    height: 16px
+    transition: fill 0.3s
+    width: 4px
+
+  &__manage-dropdown
+    left: auto
+    right: 0
+    top: 50px
+
+    @media(min-width: 768px)
+      right: 40px
+      top: 0
+
+    @media(min-width: 1440px)
+      left: 100px
+      right: auto
+
+    &.manage-popover::after
+      left: auto
+      right: 6px
+
+      @media(min-width: 768px)
+        left: 100%
+        top: 12px
+        border-bottom-color: transparent
+        border-left-color: #fff
+
+      @media(min-width: 1440px)
+        left: auto
+        right: 100%
+        top: 12px
+        border-right-color: #fff
+        border-left-color: transparent
+
   &__title
     color: $main-color
     font-size: 22px
     font-weight: 400
-    line-height: 39px
+    line-height: 28px
+    margin-bottom: 15px
 
   &__date
     margin-bottom: 6px
@@ -68,7 +134,7 @@
   &__preview-text
     font-size: 13px
     font-weight: 300
-    margin-bottom: 4px
+    margin-bottom: 12px
 
     p
       margin-bottom: 15px
@@ -91,6 +157,185 @@
     background-color: rgba(#EEEEEE, 0.5)
 
   .form-label__text
-    font-size: 10px
     line-height: 18px
     margin-bottom: 2px
+
+.manage-popover
+  background-color: #fff
+  border-radius: 8px
+  display: none
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.2))
+  position: absolute
+  padding: 10px 20px
+  width: 275px
+
+  &.is-open
+    display: block
+
+  &::after
+    bottom: 100%
+    left: 0
+    border: solid transparent
+    content: ''
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+    border-color: rgba(255, 255, 255, 0)
+    border-bottom-color: #fff
+    border-width: 8px
+
+  &__list
+    list-style: none
+    margin: 0
+    padding: 0
+
+  &__button
+    background-color: transparent
+    border: none
+    color: $secondary-color
+    cursor: pointer
+    padding: 5px
+    text-decoration: none
+
+    &:hover,
+    &:focus
+      text-decoration: underline
+
+.stats
+  border-bottom: 4px solid #EFEEEE
+  margin-bottom: 28px
+  padding-bottom: 10px
+
+  &:last-child
+    margin-bottom: 0
+
+  @media(min-width: 768px)
+    display: flex
+
+  &__item
+    align-items: center
+    display: flex
+    flex-direction: row-reverse
+    justify-content: space-between
+
+    @media(min-width: 768px)
+      display: block
+      margin-right: 25px
+      text-align: center
+
+    &--comments
+      margin-right: 0
+      margin-left: auto
+
+      @media(min-width: 768px)
+        margin-right: 0
+
+      .stats__item-num
+        color: #FB5B5B
+
+  &__item-num
+    color: $main-color
+    display: block
+    font-size: 24px
+    font-weight: 600
+    line-height: 28px
+
+  &__item-label
+    display: block
+    font-size: 10px
+    line-height: 18px
+
+.comment
+  &__top
+    align-items: center
+    display: flex
+    flex-flow: wrap
+    padding-left: 9px
+    padding-right: 9px
+
+  &__author
+    color: $main-color
+    margin-right: 10px
+
+  &__date
+    font-size: 11px
+    font-weight: 300
+
+  &__text
+    background-color: rgba(#EEEEEE,0.5)
+    border-radius: 8px
+    color: #8E8C96
+    font-size: 11px
+    font-weight: 300
+    line-height: 19px
+    min-height: 36px
+    padding: 8px 9px 7px
+
+  &__button-block
+    text-align: right
+
+  &__answer-button
+    background-color: transparent
+    border: none
+    color: $text-color
+    cursor: pointer
+    font-size: 11px
+    font-weight: 300
+    padding: 5px
+    margin-right: -5px
+    text-decoration: underline
+
+.read-more
+  background-color: transparent
+  border: none
+  color: $text-color
+  cursor: pointer
+  font-size: 11px
+  font-weight: 300
+  padding: 5px
+  text-decoration: underline
+
+.comment-answer
+  &:not(:last-child)
+    margin-bottom: 20px
+
+  &__top
+    align-items: center
+    display: flex
+    flex-flow: wrap
+
+  &__author
+    align-items: center
+    display: flex
+    color: $secondary-color
+    margin-right: 10px
+
+  &__logo
+    height: 32px
+    min-width: 32px
+    margin-right: 6px
+    width: 32px
+
+  &__date
+    font-size: 11px
+    font-weight: 300
+
+  &__text
+    color: #8E8C96
+    font-size: 11px
+    font-weight: 300
+
+    @media(min-width: 768px)
+      padding-left: 38px
+      padding-right: 38px
+
+.show-comments
+  background-color: transparent
+  border: none
+  color: $secondary-color
+  cursor: pointer
+  font-size: 12px
+  font-weight: 300
+  padding: 5px
+  text-decoration: underline
