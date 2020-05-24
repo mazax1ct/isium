@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <title>Мои ценности. Аналитика результатов опросов</title>
+
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+
+  //= template/style.html
+</head>
+
+<body id="top" class="page">
+  //= template/sprite.html
+
+  //= template/header_no_filter.html
+
+  <div class="page__inner">
+
+    //= template/sidebar.html
+
+    <div class="table-responsive">
+      <table class="table">
+        <colgroup>
+          <col>
+          <col width="165px">
+          <col width="165px">
+          <col width="165px">
+          <col width="165px">
+          <col width="165px">
+        </colgroup>
+        <tr>
+          <th>
+            <label class="search-bar" for="search">
+              <input id="search" class="input" name="search" type="text" value="">
+            </label>
+          </th>
+          <th class="js-sorting text-center">Дата&nbsp;оценки&nbsp;<img src="images/icons/asc.svg" alt=""></th>
+          <th class="js-sorting text-center">Ответов&nbsp;<img src="images/icons/desc.svg" alt=""></th>
+          <th class="js-sorting text-center">Значимость&nbsp;<img src="images/icons/asc.svg" alt=""></th>
+          <th class="js-sorting text-center">Средняя&nbsp;оценка&nbsp;<img src="images/icons/asc.svg" alt=""></th>
+          <th class="js-sorting text-center">Комментарии&nbsp;<img src="images/icons/asc.svg" alt=""></th>
+        </tr>
+        <tr>
+          <td><span class="js-drop-toggler drop-opener" data-target="2">Удобство сайта</span></td>
+          <td class="text-center"><span class="grey">12.06.2020</span></td>
+          <td class="text-center"><span class="red">130</span></td>
+          <td class="text-center"><span class="red">40%</span></td>
+          <td class="text-center"><span class="red">4.6</span></td>
+          <td class="text-center"><span class="green">12</span><span class="red">+5</span></td>
+        </tr>
+        <tr class="drop" data-target="2">
+          <td>
+            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_1">фотоопрос</span> Новые цвета сайта</span>
+          </td>
+          <td class="text-center"><span class="grey">12.06.2020</span></td>
+          <td class="text-center"><span class="grey">130</span></td>
+          <td class="text-center"><span class="grey">-</span></td>
+          <td class="text-center"><span class="grey">8.5</span></td>
+          <td class="text-center"><span class="green">7</span><span class="red">+3</span></td>
+        </tr>
+        <tr class="drop" data-target="2">
+          <td>
+            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_2">Опрос</span> Мобильное приложение</span>
+          </td>
+          <td class="text-center"><span class="grey">07.05.2020</span></td>
+          <td class="text-center"><span class="grey">130</span></td>
+          <td class="text-center"><span class="grey">40%</span></td>
+          <td class="text-center"><span class="grey">-</span></td>
+          <td class="text-center"><span class="green">5</span><span class="red">+1</span></td>
+        </tr>
+        <tr class="drop" data-target="2">
+          <td>
+            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_3">Отзыв</span> Работа сотрудников в чате</span>
+          </td>
+          <td class="text-center"><span class="grey">10.05.2020</span></td>
+          <td class="text-center"><span class="grey">130</span></td>
+          <td class="text-center"><span class="grey">-</span></td>
+          <td class="text-center"><span class="grey">5.6</span></td>
+          <td class="text-center"><span class="green">0</span></td>
+        </tr>
+        <tr class="drop" data-target="2">
+          <td>
+            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_4">портрет</span> Компьютер, смартфон или планшет</span>
+          </td>
+          <td class="text-center"><span class="grey">11.07.2020</span></td>
+          <td class="text-center"><span class="grey">110</span></td>
+          <td class="text-center"><span class="grey">-</span></td>
+          <td class="text-center"><span class="grey">-</span></td>
+          <td class="text-center"><span class="green">2</span><span class="red">+1</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  //= template/go-top.html
+
+  //= template/popups.html
+
+  //= template/scripts.html
+  <script src="js/jquery.sticky-kit.min.js"></script>
+  <script src="js/bodyScrollLock.min.js"></script>
+</body>
+
+</html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <title>Мои ценности. Создание ценностей</title>
+  <title>Мои ценности. Аналитика результатов опросов</title>
 
   <meta name="description" content="">
 
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 
-<body id="top" class="page page--fixed_header">
+<body id="top" class="page">
   <svg aria-hidden="true" style="width: 0px; height: 0px; overflow: hidden; position: absolute;" xmlns="http://www.w3.org/2000/svg">
     <symbol id="logout" viewBox="0 0 24 24">
       <g>
@@ -128,12 +128,6 @@
           <p class="head__partner-id">Ваш ID: 26656559</p>
         </div>
         <div class="head__buttons">
-          <button class="js-filter-toggler head__button head__button--filter" type="button">
-            <svg class="head__button-icon" aria-hidden="true">
-              <use xlink:href="#filter" />
-            </svg>
-            <span class="head__button-text">Фильтр</span>
-          </button>
           <a class="head__button" href="#">
             <svg class="head__button-icon" aria-hidden="true">
               <use xlink:href="#profile_edit" />
@@ -165,11 +159,6 @@
         </div>
       </div>
       <div class="header__right">
-        <button class="js-filter-toggler header__manage-button manage-button manage-button--filter" type="button" title="Фильтр">
-          <svg class="manage-button__icon" aria-hidden="true">
-            <use xlink:href="#filter" />
-          </svg>
-        </button>
         <a class="header__manage-button manage-button" href="#" title="Вид глазами клиента">
           <svg class="manage-button__icon" aria-hidden="true">
             <use xlink:href="#eye" />
@@ -252,11 +241,77 @@
       </nav>
     </div>
 
-    <button class="button" type="button" data-fancybox="add_article" data-src="#add_article">Добавить публикацию</button><br><br>
-
-    <button class="button" type="button" data-fancybox="add_article_2" data-src="#add_article_2">Добавить публикацию (опрос)</button><br><br>
-
-    <button class="button" type="button" data-fancybox="add_article_3" data-src="#add_article_3">Добавить публикацию (фотоопрос)</button>
+    <div class="table-responsive">
+      <table class="table">
+        <colgroup>
+          <col>
+          <col width="165px">
+          <col width="165px">
+          <col width="165px">
+          <col width="165px">
+        </colgroup>
+        <tr>
+          <th>
+            <p class="table-label">
+              <span class="table-label__num green">130</span>
+              Клиентов
+            </p>
+          </th>
+          <th class="text-center">
+            <p class="table-label">
+              <span class="table-label__num blue">90</span>
+              Ответов
+            </p>
+          </th>
+          <th class="text-center">
+            <p class="table-label">
+              <span class="table-label__num blue">80</span>
+              Значимость
+            </p>
+          </th>
+          <th class="text-center">
+            <p class="table-label">
+              <span class="table-label__num blue">8.5</span>
+              Средняя&nbsp;оценка
+            </p>
+          </th>
+          <th class="text-center">
+            <p class="table-label">
+              <span class="table-label__num blue">+2.0</span>
+              Динамика
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td class="blue">Анима</td>
+          <td class="text-center"><div class="point point--green"></div></td>
+          <td class="text-center"><div class="point point--green"></div></td>
+          <td class="text-center"><span class="green">8</span></td>
+          <td class="text-center"><span class="green">+1</span></td>
+        </tr>
+        <tr>
+          <td class="blue">Вектор</td>
+          <td class="text-center"><div class="point point--grey"></div></td>
+          <td class="text-center"><div class="point point--grey"></div></td>
+          <td class="text-center"><span class="grey">-</span></td>
+          <td class="text-center"><span class="grey">-</span></td>
+        </tr>
+        <tr>
+          <td class="blue">Гигант</td>
+          <td class="text-center"><div class="point point--green"></div></td>
+          <td class="text-center"><div class="point point--green"></div></td>
+          <td class="text-center"><span class="grey">3</span></td>
+          <td class="text-center"><span class="red">-1</span></td>
+        </tr>
+        <tr>
+          <td class="blue">Империал</td>
+          <td class="text-center"><div class="point point--green"></div></td>
+          <td class="text-center"><div class="point point--red"></div></td>
+          <td class="text-center"><span class="grey">1</span></td>
+          <td class="text-center"><span class="red">-1</span></td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <a id="go-top" class="go-top" href="#top" title="Наверх">
@@ -713,6 +768,8 @@
   <script type="text/javascript" src="js/select2.full.min.js"></script>
   <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script src="js/jquery.sticky-kit.min.js"></script>
+  <script src="js/bodyScrollLock.min.js"></script>
 </body>
 
 </html>

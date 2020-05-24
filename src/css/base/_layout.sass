@@ -16,6 +16,10 @@ body
 
 .page
   background-color: #EFEEEE
+  padding-top: 60px
+
+  @media(min-width: 768px)
+    padding-top: 0
 
   &--fixed_header
     .header
@@ -29,16 +33,16 @@ body
         width: 100%
         z-index: 2
 
+      @media(min-width: 1200px)
+        padding-left: 136px
+        padding-right: 0
+
     .header__inner
       @media(min-width: 768px)
         padding-left: 10px
         padding-right: 10px
 
       @media(min-width: 1200px)
-        padding-left: 60px
-        padding-right: 60px
-
-      //@media(min-width: 1440px)
         padding-left: 60px
         padding-right: 60px
 
@@ -57,9 +61,6 @@ body
 
     .page__inner
       @media(min-width: 768px)
-        padding-top: 135px
-
-      @media(min-width: 1200px)
         padding-top: 185px
 
   @media(min-width: 768px)
@@ -67,14 +68,10 @@ body
 
   &__inner
     overflow-x: hidden
-    padding-top: 60px
+    padding-top: 30px
     padding-left: 10px
     padding-right: 10px
 
     @media(min-width: 1200px)
-      padding-left: 60px
-      padding-right: 60px
-
-    //@media(min-width: 1440px)
       padding-left: 60px
       padding-right: 60px

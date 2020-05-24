@@ -216,3 +216,10 @@ $(document).on('click', '.js-filter-toggler', function () {
 	}
 	return false;
 });
+
+//тогглер таблицы
+$(document).on('click', '.js-drop-toggler', function () {
+	$(this).toggleClass("is-open");
+	$('.drop[data-target='+ $(this).attr('data-target') +']').toggleClass('is-active');
+	return false;
+});
