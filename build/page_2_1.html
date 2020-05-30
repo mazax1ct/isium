@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <title>Мои ценности. Аналитика результатов опросов</title>
+  <title>Мои новости. Лента глазами клиента</title>
 
   <meta name="description" content="">
 
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 
-<body id="top" class="page">
+<body id="top" class="page page--fixed_header">
   <svg aria-hidden="true" style="width: 0px; height: 0px; overflow: hidden; position: absolute;" xmlns="http://www.w3.org/2000/svg">
     <symbol id="logout" viewBox="0 0 24 24">
       <g>
@@ -128,6 +128,12 @@
           <p class="head__partner-id">Ваш ID: 26656559</p>
         </div>
         <div class="head__buttons">
+          <button class="js-filter-toggler head__button head__button--filter" type="button">
+            <svg class="head__button-icon" aria-hidden="true">
+              <use xlink:href="#filter" />
+            </svg>
+            <span class="head__button-text">Фильтр</span>
+          </button>
           <a class="head__button" href="#">
             <svg class="head__button-icon" aria-hidden="true">
               <use xlink:href="#profile_edit" />
@@ -159,6 +165,11 @@
         </div>
       </div>
       <div class="header__right">
+        <button class="js-filter-toggler header__manage-button manage-button manage-button--filter" type="button" title="Фильтр">
+          <svg class="manage-button__icon" aria-hidden="true">
+            <use xlink:href="#filter" />
+          </svg>
+        </button>
         <a class="header__manage-button manage-button" href="#" title="Вид глазами клиента">
           <svg class="manage-button__icon" aria-hidden="true">
             <use xlink:href="#eye" />
@@ -241,77 +252,93 @@
       </nav>
     </div>
 
-    <div class="table-responsive">
-      <table class="table">
-        <colgroup>
-          <col>
-          <col width="165px">
-          <col width="165px">
-          <col width="165px">
-          <col width="165px">
-          <col width="165px">
-        </colgroup>
-        <tr>
-          <th>
-            <label class="search-bar" for="search">
-              <input id="search" class="input" name="search" type="text" value="">
-            </label>
-          </th>
-          <th class="js-sorting text-center">Дата&nbsp;оценки&nbsp;<img src="images/icons/asc.svg" alt=""></th>
-          <th class="js-sorting text-center">Ответов&nbsp;<img src="images/icons/desc.svg" alt=""></th>
-          <th class="js-sorting text-center">Значимость&nbsp;<img src="images/icons/asc.svg" alt=""></th>
-          <th class="js-sorting text-center">Средняя&nbsp;оценка&nbsp;<img src="images/icons/asc.svg" alt=""></th>
-          <th class="js-sorting text-center">Комментарии&nbsp;<img src="images/icons/asc.svg" alt=""></th>
-        </tr>
-        <tr>
-          <td><span class="js-drop-toggler drop-opener" data-target="2">Удобство сайта</span></td>
-          <td class="text-center"><span class="grey">12.06.2020</span></td>
-          <td class="text-center"><span class="red">130</span></td>
-          <td class="text-center"><span class="red">40%</span></td>
-          <td class="text-center"><span class="red">4.6</span></td>
-          <td class="text-center"><span class="green">12</span><span class="red">+5</span></td>
-        </tr>
-        <tr class="drop" data-target="2">
-          <td>
-            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_1">фотоопрос</span> Новые цвета сайта</span>
-          </td>
-          <td class="text-center"><span class="grey">12.06.2020</span></td>
-          <td class="text-center"><span class="grey">130</span></td>
-          <td class="text-center"><span class="grey">-</span></td>
-          <td class="text-center"><span class="grey">8.5</span></td>
-          <td class="text-center"><span class="green">7</span><span class="red">+3</span></td>
-        </tr>
-        <tr class="drop" data-target="2">
-          <td>
-            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_2">Опрос</span> Мобильное приложение</span>
-          </td>
-          <td class="text-center"><span class="grey">07.05.2020</span></td>
-          <td class="text-center"><span class="grey">130</span></td>
-          <td class="text-center"><span class="grey">40%</span></td>
-          <td class="text-center"><span class="grey">-</span></td>
-          <td class="text-center"><span class="green">5</span><span class="red">+1</span></td>
-        </tr>
-        <tr class="drop" data-target="2">
-          <td>
-            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_3">Отзыв</span> Работа сотрудников в чате</span>
-          </td>
-          <td class="text-center"><span class="grey">10.05.2020</span></td>
-          <td class="text-center"><span class="grey">130</span></td>
-          <td class="text-center"><span class="grey">-</span></td>
-          <td class="text-center"><span class="grey">5.6</span></td>
-          <td class="text-center"><span class="green">0</span></td>
-        </tr>
-        <tr class="drop" data-target="2">
-          <td>
-            <span class="drop-element"><span class="drop-element__theme drop-element__theme--type_4">портрет</span> Компьютер, смартфон или планшет</span>
-          </td>
-          <td class="text-center"><span class="grey">11.07.2020</span></td>
-          <td class="text-center"><span class="grey">110</span></td>
-          <td class="text-center"><span class="grey">-</span></td>
-          <td class="text-center"><span class="grey">-</span></td>
-          <td class="text-center"><span class="green">2</span><span class="red">+1</span></td>
-        </tr>
-      </table>
+    <div class="articles">
+      <div class="js-content-with-sticky articles__list">
+        <div class="articles-list">
+          <div class="article">
+            <p class="text-center">Публикаций нет</p>
+          </div>
+        </div>
+      </div>
+      <div class="articles__filter">
+        <div class="js-sticky-block">
+          <div class="filter">
+            <form action="">
+              <p class="filter__title">Компаний: 5</p>
+              <div class="companies-list">
+                <div class="companies-list__list">
+                  <div class="companies-list__item">
+                    <label class="filter-item" for="f_1">
+                      <input id="f_1" name="f_1" type="checkbox" value="1">
+                      <span class="filter-item__image"><img src="images/content/img_9.jpg" alt="Happy Partner"></span>
+                      <span class="filter-item__text">Happy Partner</span>
+                    </label>
+                  </div>
+                  <div class="companies-list__item">
+                    <label class="filter-item" for="f_2">
+                      <input id="f_2" name="f_2" type="checkbox" value="2">
+                      <span class="filter-item__image"><img src="images/content/img_10.jpg" alt="LEROY MERLIN"></span>
+                      <span class="filter-item__text">LEROY MERLIN</span>
+                    </label>
+                  </div>
+                  <div class="companies-list__item">
+                    <label class="filter-item" for="f_3">
+                      <input id="f_3" name="f_3" type="checkbox" value="3">
+                      <span class="filter-item__image"><img src="images/content/img_11.jpg" alt="М.видео"></span>
+                      <span class="filter-item__text">М.видео</span>
+                    </label>
+                  </div>
+                  <div class="companies-list__item">
+                    <label class="filter-item" for="f_4">
+                      <input id="f_4" name="f_4" type="checkbox" value="4">
+                      <span class="filter-item__image"><img src="images/content/img_12.jpg" alt="ЯММПИЦЦА"></span>
+                      <span class="filter-item__text">ЯММПИЦЦА</span>
+                    </label>
+                  </div>
+                  <div class="companies-list__item">
+                    <label class="filter-item" for="f_5">
+                      <input id="f_5" name="f_5" type="checkbox" value="5">
+                      <span class="filter-item__image"><img src="images/content/img_13.jpg" alt="МИФ"></span>
+                      <span class="filter-item__text">МИФ</span>
+                    </label>
+                  </div>
+                  <div class="companies-list__item">
+                    <button class="add-company" type="button" title="Добавить">
+                      <svg class="add-company__icon" aria-hidden="true">
+                        <use xlink:href="#plus" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p class="filter__title">Happy Partner: 3 ценности</p>
+              <ol class="worth-list">
+                <li class="worth-list__item">
+                  <label class="checkbox-label" for="w_1">
+                    <input id="w_1" name="w_1" type="checkbox">
+                    <span class="checkbox-label__icon"></span>
+                    <span class="checkbox-label__text">Качество доставки</span>
+                  </label>
+                </li>
+                <li class="worth-list__item">
+                  <label class="checkbox-label" for="w_2">
+                    <input id="w_2" name="w_2" type="checkbox">
+                    <span class="checkbox-label__icon"></span>
+                    <span class="checkbox-label__text">Ассортимент товарного каталога</span>
+                  </label>
+                </li>
+                <li class="worth-list__item">
+                  <label class="checkbox-label" for="w_3">
+                    <input id="w_3" name="w_3" type="checkbox">
+                    <span class="checkbox-label__icon"></span>
+                    <span class="checkbox-label__text">Удобство сайта</span>
+                  </label>
+                </li>
+              </ol>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

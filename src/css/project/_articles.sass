@@ -2,12 +2,24 @@
   @media(min-width: 1200px)
     display: flex
 
+  &--no_filter
+    .articles__list
+      @media(min-width: 1200px)
+        margin-right: auto
+
+      @media(min-width: 1440px)
+        transform: translateX(-45px)
+
   &__list
     @media(min-width: 1200px)
+      flex-grow: 1
+      max-width: 695px
       margin-left: auto
-      margin-right: auto
+      position: relative
+      z-index: 2
 
     @media(min-width: 1440px)
+      max-width: 785px
       padding-left: 90px
 
   &__filter
@@ -35,6 +47,7 @@
       display: block
       height: auto
       min-width: 286px
+      margin-right: auto
       padding-left: 30px
       padding-top: 0
       position: static
@@ -43,6 +56,9 @@
 
     &.is-open
       right: 0
+
+    .js-sticky-block
+      z-index: 1
 
 .filter
   max-width: 256px
@@ -185,7 +201,6 @@
 
   &__top
     color: $secondary-color
-    font-weight: 300
     line-height: 18px
 
     @media(min-width: 768px)
@@ -278,15 +293,17 @@
     font-size: 22px
     font-weight: 400
     line-height: 28px
-    margin-bottom: 15px
+    margin-bottom: 5px
 
   &__date
-    margin-bottom: 6px
+    margin-bottom: 15px
 
   &__preview-text
     font-size: 13px
-    font-weight: 300
     margin-bottom: 12px
+
+    @media(min-width: 1200px)
+      font-size: 14px
 
     p
       margin-bottom: 15px
@@ -310,7 +327,7 @@
 
   .form-label__text
     line-height: 18px
-    margin-bottom: 2px
+    margin-bottom: 5px
 
 .manage-popover
   background-color: #fff
@@ -399,6 +416,12 @@
     line-height: 18px
 
 .comment
+  &--to_comment
+    padding-left: 38px
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
   &__top
     align-items: center
     display: flex
@@ -424,6 +447,9 @@
     min-height: 36px
     padding: 8px 9px 7px
 
+    @media(min-width: 1200px)
+      font-size: 13px
+
   &__button-block
     text-align: right
 
@@ -438,6 +464,9 @@
     margin-right: -5px
     text-decoration: underline
 
+    @media(min-width: 1200px)
+      font-size: 13px
+
 .read-more
   background-color: transparent
   border: none
@@ -450,7 +479,7 @@
 
 .comment-answer
   &:not(:last-child)
-    margin-bottom: 20px
+    margin-bottom: 10px
 
   &__top
     align-items: center
@@ -482,6 +511,33 @@
       padding-left: 38px
       padding-right: 38px
 
+    @media(min-width: 1200px)
+      font-size: 13px
+
+  &__button-block
+    text-align: right
+
+  &__answer-button
+    background-color: transparent
+    border: none
+    color: $text-color
+    cursor: pointer
+    font-size: 11px
+    font-weight: 300
+    padding: 5px
+    margin-right: -5px
+    text-decoration: underline
+
+    @media(min-width: 1200px)
+      font-size: 13px
+
+.answer-form
+  &:not(:last-child)
+    margin-bottom: 20px
+
+  @media(min-width: 768px)
+    padding-left: 38px
+
 .show-comments
   background-color: transparent
   border: none
@@ -491,3 +547,72 @@
   font-weight: 300
   padding: 5px
   text-decoration: underline
+
+  @media(min-width: 1200px)
+    font-size: 13px
+
+.stat-bar
+  align-items: flex-end
+  display: flex
+
+  &:not(:last-child)
+    margin-bottom: 20px
+
+  &__qnt
+    color: $main-color
+    font-size: 14px
+    font-weight: 700
+    line-height: 1
+    min-width: 65px
+    padding-right: 10px
+
+    &--red
+      color: #FB5B5B
+
+    @media(min-width: 1200px)
+      font-size: 16px
+
+  &__bar-block
+    flex-grow: 1
+
+  &__title-block
+    align-items: flex-end
+    display: flex
+    justify-content: space-between
+    margin-bottom: 5px
+
+  &__title
+    color: $secondary-color
+    font-size: 10px
+    line-height: 1.2
+    padding-right: 10px
+
+    @media(min-width: 1200px)
+      font-size: 13px
+
+  &__percent
+    color: $main-color
+    font-size: 14px
+    font-weight: 700
+    line-height: 1
+
+    @media(min-width: 1200px)
+      font-size: 16px
+
+.horizontal-bar
+  border-radius: 4px
+  background-color: rgba(#EEEEEE, 0.5)
+  height: 8px
+  overflow: hidden
+  position: relative
+
+  &__value
+    background-color: $main-color
+    height: 8px
+    left: 0
+    position: absolute
+    top: 0
+    z-index: 1
+
+    &--red
+      background-color: #FB5B5B

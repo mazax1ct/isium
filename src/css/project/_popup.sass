@@ -12,8 +12,32 @@
   width: 100%
   z-index: 1
 
-  @media(min-width: 700px)
+  @media(min-width: 768px)
     padding: 36px 50px 43px
+
+  &.fancybox-content
+    box-shadow: none
+
+  &--crop
+    background-color: #EFEEEE
+
+    @media(min-width: 768px)
+      padding: 35px 45px 25px
+
+    .form-title
+      margin-bottom: 25px
+      text-align: center
+
+    .buttons-block
+      display: flex
+      justify-content: center
+      margin-top: 25px
+      text-align: center
+
+      .button
+        min-width: 115px
+        margin-left: 5px
+        margin-right: 5px
 
   &__close
     align-items: center
@@ -30,7 +54,10 @@
     top: 35px
     width: 24px
 
-    &:hover
+    &:hover,
+    &:focus
+      outline: none
+
       .popup__close-icon
         fill: rgba(#6F7075, 1)
 
@@ -45,8 +72,27 @@
     line-height: 21px
     margin-bottom: 31px
 
+    &--big
+      font-size: 22px
+
   &__save-block
     margin-top: 25px
+    text-align: right
+
+    .button
+      min-width: 100%
+      margin-bottom: 20px
+
+      @media(min-width: 768px)
+        min-width: 0
+        margin-bottom: 0
+
+      & + .button
+        @media(min-width: 768px)
+          margin-left: 20px
+
+      &:last-child
+        margin-bottom: 0
 
   &__publish-block
     align-items: center

@@ -180,8 +180,8 @@
             <use xlink:href="#comments" />
           </svg>
         </a>
-        <button class="header__manage-button header__add-button button" type="button" data-fancybox="add_worth" data-src="#add_worth">ДОБАВИТЬ</button>
-        <button class="header__manage-button header__add-button button button--transparent" type="button">ЗАГРУЗИТЬ XLS</button>
+        <button class="header__manage-button header__add-button button" type="button" data-fancybox="add_worth" data-src="#add_worth">Добавить</button>
+        <button class="header__manage-button header__add-button button button--transparent" type="button">Загрузить XLS</button>
       </div>
     </div>
   </header>
@@ -252,6 +252,8 @@
       </nav>
     </div>
 
+    <button class="button" type="button" data-fancybox="new_client" data-src="#new_client">Новый клиент</button><br><br>
+
     <button class="button" type="button" data-fancybox="add_article" data-src="#add_article">Добавить публикацию</button><br><br>
 
     <button class="button" type="button" data-fancybox="add_article_2" data-src="#add_article_2">Добавить публикацию (опрос)</button><br><br>
@@ -265,6 +267,45 @@
     </svg>
   </a>
 
+  <div id="new_client" class="popup">
+    <button class="js-popup-close popup__close" type="button" title="Закрыть">
+      <svg class="popup__close-icon" aria-hidden="true">
+        <use xlink:href="#close" />
+      </svg>
+    </button>
+    <p class="popup__title popup__title--big">Новый клиент</p>
+    <form action="">
+      <label class="form-label" for="inp_1">
+        <span class="form-label__text">Название компании </span>
+        <input id="inp_1" class="input" name="inp_1" type="text" value="">
+      </label>
+      <div class="form-row form-row--cols_3">
+        <div class="form-row__item">
+          <label class="form-label" for="inp_2">
+            <span class="form-label__text">Контактное лицо</span>
+            <input id="inp_2" class="input" name="inp_2" type="text" value="">
+          </label>
+        </div>
+        <div class="form-row__item">
+          <label class="form-label" for="inp_3">
+            <span class="form-label__text">E-mail</span>
+            <input id="inp_3" class="input" name="inp_3" type="text" value="">
+          </label>
+        </div>
+        <div class="form-row__item">
+          <label class="form-label" for="inp_3">
+            <span class="form-label__text">Телефон</span>
+            <input id="inp_3" class="input" name="inp_3" type="text" value="">
+          </label>
+        </div>
+      </div>
+      <div class="popup__save-block">
+        <button class="button button--transparent" type="button">Сохранить и пригласить</button>
+        <button class="button" type="button">Сохранить</button>
+      </div>
+    </form>
+  </div>
+  
   <div id="add_worth" class="popup">
     <button class="js-popup-close popup__close" type="button" title="Закрыть">
       <svg class="popup__close-icon" aria-hidden="true">
@@ -287,7 +328,7 @@
       </label>
       <button class="add-field" type="button">Добавить ещё</button>
       <div class="popup__save-block">
-        <button class="button button--wide" type="button">СОХРАНИТЬ</button>
+        <button class="button button--wide" type="button">Сохранить</button>
       </div>
     </form>
   </div>
@@ -345,7 +386,8 @@
             </label>
           </div>
           <div class="info__photo">
-            <label class="form-label">
+            <label class="form-label photo-container" for="inputImage">
+              <input id="inputImage" type="file" name="file" accept="image/*">
               <span class="form-label__text">Фотография</span>
               <div class="foto-upload"></div>
             </label>
@@ -395,7 +437,7 @@
           <span class="checkbox-label__icon"></span>
           <span class="checkbox-label__text">Черновик</span>
         </label>
-        <button class="button" type="button">ОПУБЛИКОВАТЬ</button>
+        <button class="button" type="button">Опубликовать</button>
       </div>
     </form>
   </div>
@@ -483,7 +525,7 @@
         </li>
         <li class="questions-list__item">
           <label class="checkbox-label" for="q_3_3">
-            <input id="q_3_3" name="q_3_3" type="checkbox" disabled>
+            <input id="q_3_3" name="q_3_3" type="checkbox" disabled checked>
             <span class="checkbox-label__icon"></span>
             <span class="checkbox-label__text">Добавить вопрос</span>
           </label>
@@ -502,27 +544,62 @@
             <div class="options2__inner">
               <div class="options2__item">
                 <label class="form-label" for="inp_3_6">
-                  <input id="inp_3_6" class="input" name="inp_3_6" type="text" value="Светлый">
+                  <span class="form-label__container">
+                    <input id="inp_3_6" class="input" name="inp_3_6" type="text" value="Светлый">
+                    <button class="clear" type="button" title="Удалить">
+                      <svg class="clear__icon" aria-hidden="true">
+                        <use xlink:href="#close" />
+                      </svg>
+                    </button>
+                  </span>
                 </label>
               </div>
               <div class="options2__item">
                 <label class="form-label" for="inp_3_7">
-                  <input id="inp_3_7" class="input" name="inp_3_7" type="text" value="Любой">
+                  <span class="form-label__container">
+                    <input id="inp_3_7" class="input" name="inp_3_7" type="text" value="Любой">
+                    <button class="clear" type="button" title="Удалить">
+                      <svg class="clear__icon" aria-hidden="true">
+                        <use xlink:href="#close" />
+                      </svg>
+                    </button>
+                  </span>
                 </label>
               </div>
               <div class="options2__item">
                 <label class="form-label" for="inp_3_8">
-                  <input id="inp_3_8" class="input" name="inp_3_8" type="text" value="У меня аллергия на мёд">
+                  <span class="form-label__container">
+                    <input id="inp_3_8" class="input" name="inp_3_8" type="text" value="У меня аллергия на мёд">
+                    <button class="clear" type="button" title="Удалить">
+                      <svg class="clear__icon" aria-hidden="true">
+                        <use xlink:href="#close" />
+                      </svg>
+                    </button>
+                  </span>
                 </label>
               </div>
               <div class="options2__item">
                 <label class="form-label" for="inp_3_9">
-                  <input id="inp_3_9" class="input" name="inp_3_9" type="text" value="Тёмный">
+                  <span class="form-label__container">
+                    <input id="inp_3_9" class="input" name="inp_3_9" type="text" value="Тёмный">
+                    <button class="clear" type="button" title="Удалить">
+                      <svg class="clear__icon" aria-hidden="true">
+                        <use xlink:href="#close" />
+                      </svg>
+                    </button>
+                  </span>
                 </label>
               </div>
               <div class="options2__item">
                 <label class="form-label" for="inp_3_10">
-                  <input id="inp_3_10" class="input" name="inp_3_10" type="text" value="Густой">
+                  <span class="form-label__container">
+                    <input id="inp_3_10" class="input" name="inp_3_10" type="text" value="Густой">
+                    <button class="clear" type="button" title="Удалить">
+                      <svg class="clear__icon" aria-hidden="true">
+                        <use xlink:href="#close" />
+                      </svg>
+                    </button>
+                  </span>
                 </label>
               </div>
               <div class="options2__item">
@@ -552,7 +629,7 @@
           <span class="checkbox-label__icon"></span>
           <span class="checkbox-label__text">Черновик</span>
         </label>
-        <button class="button" type="button">ОПУБЛИКОВАТЬ</button>
+        <button class="button" type="button">Опубликовать</button>
       </div>
     </form>
   </div>
@@ -704,14 +781,32 @@
           <span class="checkbox-label__icon"></span>
           <span class="checkbox-label__text">Черновик</span>
         </label>
-        <button class="button" type="button">ОПУБЛИКОВАТЬ</button>
+        <button class="button" type="button">Опубликовать</button>
       </div>
     </form>
+  </div>
+  
+  <div id="crop-popup" class="popup popup--crop">
+    <button class="js-popup-close popup__close" type="button" title="Закрыть">
+      <svg class="popup__close-icon" aria-hidden="true">
+        <use xlink:href="#close" />
+      </svg>
+    </button>
+    <p class="form-title">Фотография для фотоопроса с выбором из 2 вариантов</p>
+    <div class="img-container">
+      <img src="" alt="">
+    </div>
+    <div class="buttons-block">
+      <button class="button" type="button">Сохранить</button>
+      <button class="button button--transparent" type="button">Отмена</button>
+    </div>
   </div>
 
   <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="js/select2.full.min.js"></script>
   <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/cropper.min.js"></script>
+  <script type="text/javascript" src="js/cropper-init.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 

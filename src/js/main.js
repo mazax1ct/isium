@@ -184,8 +184,16 @@ $(document).on('click', '.js-sidebar-toggler', function () {
 //открытие меню аккаунта
 $(document).on('click', '.js-head-toggler', function () {
 	$('.head').toggleClass('is-open');
+	document.addEventListener('click', closeHead);
 	return false;
 });
+
+function closeHead(evt) {
+  if (!$('.head').is(evt.target) && $('.head').has(evt.target).length === 0) {
+    $('.head').removeClass('is-open');
+    document.removeEventListener('click', closeHead);
+	}
+}
 
 //открытие блока управления публикацией
 $(document).on('click', '.js-manage-toggler', function () {
@@ -222,4 +230,12 @@ $(document).on('click', '.js-drop-toggler', function () {
 	$(this).toggleClass("is-open");
 	$('.drop[data-target='+ $(this).attr('data-target') +']').toggleClass('is-active');
 	return false;
+});
+
+//очистка поля ввода
+$("[contenteditable]").focusout(function(){
+	var element = $(this);
+	if (!element.text().trim().length) {
+  	element.empty();
+	}
 });
