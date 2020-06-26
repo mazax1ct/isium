@@ -60,6 +60,39 @@
     .js-sticky-block
       z-index: 1
 
+.articles-list
+  &__add-block
+    left: 0
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 2
+
+    @media(min-width: 768px)
+      padding-left: 136px
+
+  &__add-block-inner
+    background-color: #EFEEEE
+    margin-left: auto
+    margin-right: auto
+    max-width: 725px
+    padding: 75px 15px 15px
+
+    @media(min-width: 768px)
+      padding-top: 30px
+      padding-bottom: 30px
+
+    @media(min-width: 900px)
+      max-width: 755px
+      padding-left: 30px
+      padding-right: 30px
+
+    @media(min-width: 1200px)
+      transform: translateX(-145px)
+
+    @media(min-width: 1440px)
+      transform: translateX(-97px)
+
 .filter
   max-width: 256px
   margin-left: auto
@@ -114,11 +147,11 @@
   position: relative
 
   &::after
-    background-color: #EFEEEE
-    box-shadow: 0 4px 4px 0 rgba(#fff, 0.5), inset -4px -4px 16px 0 rgba(#fff, 0.5), inset 4px 4px 16px 0 rgba(#B4B3B1, 0.75)
+    background-color: #D6D6D6
+    box-shadow: 0 1px 1px 0 #fff
     bottom: 0
     content: ''
-    height: 4px
+    height: 2px
     display: block
     left: 0
     position: absolute
@@ -161,11 +194,48 @@
     width: 32px
 
 .worth-list
+  font-size: 12px
   list-style: none
-  margin: 0
+  margin: 0 0 25px
   padding: 0
 
+  &--decorated
+    margin-bottom: 24px
+    padding-bottom: 28px
+    position: relative
+
+    &::after
+      background-color: #D6D6D6
+      box-shadow: 0 1px 1px 0 #fff
+      bottom: 0
+      content: ''
+      height: 2px
+      display: block
+      left: 0
+      position: absolute
+      top: auto
+      width: 100%
+
   &__item
+    &:not(:last-child)
+      margin-bottom: 15px
+
+.client-card
+  border-radius: 8px
+  background-color: #fff
+  font-size: 12px
+  margin-bottom: 20px
+  padding: 25px 17px
+
+  &__title
+    color: $main-color
+    font-size: 14px
+
+  &__subtitle
+    color: $secondary-color
+    margin-bottom: 15px
+
+  &__address
     margin-bottom: 15px
 
 .article
@@ -175,7 +245,7 @@
   border-radius: 16px
   margin-left: auto
   margin-right: auto
-  margin-bottom: 48px
+  margin-bottom: 30px
   max-width: 695px
   padding: 30px 15px
   position: relative
@@ -184,6 +254,9 @@
 
   @media(min-width: 700px)
     padding: 30px 40px 36px
+
+  @media(min-width: 1200px)
+    margin-bottom: 48px
 
   &__company-logo
     background-color: #fff
@@ -200,6 +273,12 @@
       display: block
 
   &__top
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding-right: 35px
+    position: relative
     color: $secondary-color
     line-height: 18px
 
@@ -208,7 +287,6 @@
       justify-content: space-between
       margin-bottom: 5px
 
-  &__theme,
   &__company-name
     margin-bottom: 10px
 
@@ -225,12 +303,34 @@
       max-width: 200px
 
   &__title-block
+    align-items: center
     display: flex
+    flex-wrap: wrap
     justify-content: space-between
 
+    .article__title
+      margin-bottom: 3px
+
+  &__draft
+    color: $secondary-color
+    font-size: 11px
+    padding-right: 35px
+
+  &__type-label
+    border-radius: 4px
+    font-size: 9px
+    line-height: 1
+    margin-top: 4px
+    margin-bottom: 5px
+    padding: 8px 10px
+    text-transform: uppercase
+    white-space: nowrap
+
   &__manage-block
-    padding-top: 4px
-    position: relative
+    left: auto
+    position: absolute
+    top: 0
+    right: 0
 
     .article__title
       padding-right: 20px
@@ -296,6 +396,7 @@
     margin-bottom: 5px
 
   &__date
+    font-size: 12px
     margin-bottom: 15px
 
   &__preview-text
@@ -359,6 +460,10 @@
     margin: 0
     padding: 0
 
+    li
+      &:not(:last-child)
+        margin-bottom: 5px
+
   &__button
     background-color: transparent
     border: none
@@ -416,16 +521,17 @@
     line-height: 18px
 
 .comment
-  &--to_comment
-    padding-left: 38px
+  &:not(:last-child)
+    margin-bottom: 16px
 
-    &:not(:last-child)
-      margin-bottom: 10px
+  &--to_comment
+    padding-left: 69px
 
   &__top
     align-items: center
     display: flex
     flex-flow: wrap
+    justify-content: space-between
     padding-left: 9px
     padding-right: 9px
 
@@ -436,6 +542,22 @@
   &__date
     font-size: 11px
     font-weight: 300
+
+  &__delete
+    align-items: center
+    background-color: transparent
+    border: none
+    cursor: pointer
+    display: flex
+    height: 20px
+    justify-content: center
+    padding: 0
+    width: 20px
+
+  &__delete-icon
+    fill: $text-color
+    height: 8px
+    width: 8px
 
   &__text
     background-color: rgba(#EEEEEE,0.5)
@@ -448,10 +570,11 @@
     padding: 8px 9px 7px
 
     @media(min-width: 1200px)
-      font-size: 13px
+      font-size: 12px
 
   &__button-block
-    text-align: right
+    padding-left: 9px
+    padding-right: 9px
 
   &__answer-button
     background-color: transparent
@@ -461,10 +584,10 @@
     font-size: 11px
     font-weight: 300
     padding: 5px
-    margin-right: -5px
+    margin-left: -5px
     text-decoration: underline
 
-    @media(min-width: 1200px)
+    //@media(min-width: 1200px)
       font-size: 13px
 
 .read-more
@@ -478,18 +601,43 @@
   text-decoration: underline
 
 .comment-answer
+  @media(min-width: 1200px)
+    padding-left: 40px
+
   &:not(:last-child)
-    margin-bottom: 10px
+    margin-bottom: 16px
 
   &__top
     align-items: center
     display: flex
     flex-flow: wrap
+    padding-right: 9px
+
+  &__top-buttons
+    display: flex
+    margin-left: auto
+
+  &__top-button
+    align-items: center
+    background-color: transparent
+    border: none
+    cursor: pointer
+    display: flex
+    height: 20px
+    justify-content: center
+    padding: 0
+    width: 20px
+
+  &__top-button-icon
+    fill: $text-color
+    height: 8px
+    width: 8px
 
   &__author
     align-items: center
     display: flex
     color: $secondary-color
+    font-weight: 500
     margin-right: 10px
 
   &__logo
@@ -497,6 +645,11 @@
     min-width: 32px
     margin-right: 6px
     width: 32px
+
+  &__answered
+    font-size: 12px
+    font-weight: 400
+    margin-left: 5px
 
   &__date
     font-size: 11px
@@ -512,10 +665,11 @@
       padding-right: 38px
 
     @media(min-width: 1200px)
-      font-size: 13px
+      font-size: 12px
 
   &__button-block
-    text-align: right
+    @media(min-width: 768px)
+      padding-left: 38px
 
   &__answer-button
     background-color: transparent
@@ -525,11 +679,22 @@
     font-size: 11px
     font-weight: 300
     padding: 5px
-    margin-right: -5px
+    margin-left: -5px
     text-decoration: underline
 
-    @media(min-width: 1200px)
+    //@media(min-width: 1200px)
       font-size: 13px
+
+  .answer-form
+    &:not(:last-child)
+      margin-bottom: 10px
+
+  &__buttons
+    text-align: right
+
+    .button
+      font-size: 12px
+      min-width: 125px
 
 .answer-form
   &:not(:last-child)
@@ -538,66 +703,98 @@
   @media(min-width: 768px)
     padding-left: 38px
 
+.answer-delete
+  color: #8E8C96
+  font-size: 12px
+  text-align: center
+
+  &:not(:last-child)
+    margin-bottom: 16px
+
 .show-comments
   background-color: transparent
   border: none
   color: $secondary-color
   cursor: pointer
   font-size: 12px
-  font-weight: 300
   padding: 5px
-  text-decoration: underline
 
   @media(min-width: 1200px)
     font-size: 13px
+
+.answers-quantity
+  background-color: $secondary-color
+  border-radius: 4px
+  color: #fff
+  font-size: 12px
+  min-height: 27px
+  margin-bottom: 10px
+  padding-top: 3px
+  text-align: center
+
+.stats-block
+  &:not(:last-child)
+    margin-bottom: 40px
 
 .stat-bar
   align-items: flex-end
   display: flex
 
   &:not(:last-child)
-    margin-bottom: 20px
+    margin-bottom: 18px
 
-  &__qnt
+  &--type_2
+    flex-direction: row-reverse
+
+    .stat-bar__title-block
+      justify-content: flex-end
+
+    .stat-bar__percents
+      padding-right: 10px
+      padding-left: 0
+
+  &__percents
     color: $main-color
     font-size: 14px
-    font-weight: 700
     line-height: 1
-    min-width: 65px
-    padding-right: 10px
+    min-width: 40px
+    margin-bottom: -3px
+    padding-left: 10px
+    text-align: right
 
     &--red
       color: #FB5B5B
-
-    @media(min-width: 1200px)
-      font-size: 16px
 
   &__bar-block
     flex-grow: 1
 
   &__title-block
-    align-items: flex-end
+    align-items: center
     display: flex
-    justify-content: space-between
     margin-bottom: 5px
 
   &__title
     color: $secondary-color
-    font-size: 10px
+    font-size: 11px
     line-height: 1.2
-    padding-right: 10px
 
     @media(min-width: 1200px)
       font-size: 13px
 
-  &__percent
+  &__qnt
     color: $main-color
-    font-size: 14px
-    font-weight: 700
+    font-size: 11px
     line-height: 1
+    margin-left: 5px
+
+    &--red
+      color: #FF6666
+
+    &::before
+      content: '• '
 
     @media(min-width: 1200px)
-      font-size: 16px
+      font-size: 13px
 
 .horizontal-bar
   border-radius: 4px
@@ -616,3 +813,116 @@
 
     &--red
       background-color: #FB5B5B
+
+.question-title
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  margin-bottom: 20px
+  margin-top: 30px
+
+.stat-bar2
+  align-items: center
+  display: flex
+  margin-bottom: 5px
+
+  &__num
+    color: $secondary-color
+    font-size: 11px
+    line-height: 10px
+    min-width: 25px
+    padding-right: 9px
+    text-align: right
+    width: 25px
+
+  &__bar-block
+    flex-grow: 1
+    height: 16px
+    max-width: calc(100% - 30px)
+    padding-right: 60px
+
+  &__bar
+    height: 16px
+    position: relative
+
+    &--type_10
+      background-color: #00BBD3
+
+    &--type_9
+      background-color: #1CB2C7
+
+    &--type_8
+      background-color: #39A8BB
+
+    &--type_7
+      background-color: #559FAF
+
+    &--type_6
+      background-color: #7195A6
+
+    &--type_5
+      background-color: #8E8C96
+
+    &--type_4
+      background-color: #AA828A
+
+    &--type_3
+      background-color: #C6797E
+
+    &--type_2
+      background-color: #E36F72
+
+    &--type_1
+      background-color: #FF6666
+
+  &__qnt
+    color: $main-color
+    font-size: 14px
+    min-width: 60px
+    left: auto
+    position: absolute
+    padding-left: 10px
+    right: -60px
+    top: 50%
+    transform: translateY(-50%)
+    width: 60px
+
+.tags-list
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  margin-left: -2px
+  margin-right: -2px
+  padding: 0
+
+  &__item
+    margin-bottom: 5px
+    padding-left: 2px
+    padding-right: 2px
+
+.tag
+  cursor: pointer
+  display: block
+  position: relative
+
+  input[type="checkbox"],
+  input[type="radio"]
+    position: absolute
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    width: 1px
+
+    &:checked + .tag__text
+      border-color: rgba(#000, 0.5)
+
+  &__text
+    border: 1px solid transparent
+    border-radius: 8px
+    display: block
+    font-size: 9px
+    line-height: 1
+    min-width: 70px
+    padding: 7px 5px
+    text-align: center
+    text-transform: uppercase

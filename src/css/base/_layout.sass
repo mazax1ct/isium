@@ -29,8 +29,8 @@ body
         margin-bottom: 0
         position: fixed
         padding-left: 136px
+        right: 0
         top: 0
-        width: 100%
         z-index: 3
 
       @media(min-width: 1200px)
@@ -43,6 +43,10 @@ body
         padding-right: 10px
 
       @media(min-width: 1200px)
+        padding-left: 30px
+        padding-right: 30px
+
+      @media(min-width: 1400px)
         padding-left: 60px
         padding-right: 60px
 
@@ -52,8 +56,8 @@ body
         width: calc(100% - 20px)
 
       @media(min-width: 1200px)
-        left: 60px
-        width: calc(100% - 120px)
+        left: 30px
+        width: calc(100% - 60px)
 
       @media(min-width: 1440px)
         left: 60px
@@ -66,12 +70,58 @@ body
   @media(min-width: 768px)
     padding-left: 136px
 
+  &--auth
+    background: url('../images/bg/auth_bg.jpg') no-repeat 50% 50% / cover #033A52
+
+    @media(min-width: 768px)
+      padding-left: 0
+
+  &--no_header
+    .page__inner
+      min-height: 100%
+      padding-top: 30px
+
+      @media(min-width: 1200px)
+        padding-top: 50px
+
+  &--center_content
+    padding-top: 0
+
+    .page__inner
+      align-items: center
+      display: flex
+      flex-direction: column
+      justify-content: center
+      min-height: 100%
+      padding-top: 0
+
+      @media(min-width: 1200px)
+        padding-top: 0
+
+    &.fancybox-active
+      height: 100%
+
+  &--articles_list
+    .page__inner
+      min-height: 100%
+      padding-top: 80px
+
+      @media(min-width: 768px)
+        padding-top: 115px
+
+      @media(min-width: 1200px)
+        padding-top: 130px
+
   &__inner
     overflow-x: hidden
-    padding-top: 30px
+    //padding-top: 30px
     padding-left: 10px
     padding-right: 10px
 
     @media(min-width: 1200px)
+      padding-left: 30px
+      padding-right: 30px
+
+    @media(min-width: 1400px)
       padding-left: 60px
       padding-right: 60px

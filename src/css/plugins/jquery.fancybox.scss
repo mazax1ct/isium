@@ -210,13 +210,13 @@ body.compensate-for-scrollbar {
 
 .fancybox-can-pan .fancybox-content,
 .fancybox-can-swipe .fancybox-content {
-  cursor: -webkit-grab;
-  cursor: grab;
+  /*cursor: -webkit-grab;
+  cursor: grab;*/
 }
 
 .fancybox-is-grabbing .fancybox-content {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
+  /*cursor: -webkit-grabbing;
+  cursor: grabbing;*/
 }
 
 .fancybox-container [data-selectable='true'] {

@@ -137,8 +137,23 @@ $(document).ready(function () {
           offset_top: 190
         });
       }, 100);
+
+			$(".js-sticky-block2").trigger("sticky_kit:detach");
+      setTimeout(function() {
+        $(".js-sticky-block2").stick_in_parent({
+          offset_top: 100
+        });
+      }, 100);
     }
   }
+
+	//попапы
+	$('[data-fancybox]').fancybox({
+		closeExisting: true,
+		hash: false,
+		autoFocus: false,
+		touch: false
+	});
 });
 
 //открепляем и перезапускаем прилипающий блок при резайзе
@@ -149,6 +164,13 @@ $(window).resize(function() {
       setTimeout(function() {
         $(".js-sticky-block").stick_in_parent({
           offset_top: 190
+        });
+      }, 100);
+
+			$(".js-sticky-block2").trigger("sticky_kit:detach");
+      setTimeout(function() {
+        $(".js-sticky-block2").stick_in_parent({
+          offset_top: 100
         });
       }, 100);
     }
@@ -163,6 +185,13 @@ $(window).on("orientationchange", function(event) {
       setTimeout(function() {
         $(".js-sticky-block").stick_in_parent({
           offset_top: 190
+        });
+      }, 100);
+
+			$(".js-sticky-block2").trigger("sticky_kit:detach");
+      setTimeout(function() {
+        $(".js-sticky-block2").stick_in_parent({
+          offset_top: 100
         });
       }, 100);
     }
@@ -238,4 +267,10 @@ $("[contenteditable]").focusout(function(){
 	if (!element.text().trim().length) {
   	element.empty();
 	}
+});
+
+//открытие/закрытие блока добавления тега
+$(document).on('click', '.js-tag-block-toggle', function () {
+	$(this).next('.tag-block__dropdown').toggleClass("is-open");
+	return false;
 });

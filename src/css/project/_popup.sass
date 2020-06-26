@@ -13,16 +13,13 @@
   z-index: 1
 
   @media(min-width: 768px)
-    padding: 36px 50px 43px
+    padding: 35px 40px 25px
 
   &.fancybox-content
     box-shadow: none
 
   &--crop
     background-color: #EFEEEE
-
-    @media(min-width: 768px)
-      padding: 35px 45px 25px
 
     .form-title
       margin-bottom: 25px
@@ -39,6 +36,99 @@
         margin-left: 5px
         margin-right: 5px
 
+  &--auth
+    box-shadow: none
+    display: block
+    max-width: 450px
+
+    @media(min-width: 768px)
+      padding: 25px 35px 35px
+
+    .popup__title
+      margin-bottom: 20px
+      text-align: center
+
+    .popup__remember-block
+      align-items: center
+      display: flex
+      justify-content: space-between
+
+      .checkbox-label
+        margin-bottom: 0
+
+    .popup__button-block
+      margin-top: 20px
+
+      .button
+        min-width: 115px
+
+  &--forgot
+    min-height: 180px
+    max-width: 450px
+
+    @media(min-width: 768px)
+      padding: 25px 35px 35px
+
+    .popup__title
+      margin-top: 17px
+      margin-bottom: 20px
+      text-align: center
+
+    .popup__close
+      right: 10px
+      top: 10px
+
+    .popup__button-block
+      margin-top: 19px
+
+  &--form
+    display: block
+
+  &--no_worth
+    display: block
+    min-height: 180px
+    max-width: 450px
+
+    @media(min-width: 768px)
+      padding: 25px 35px 35px
+
+    .popup__title
+      margin-top: 17px
+      margin-bottom: 20px
+      text-align: center
+
+    .popup__button-block
+      margin-top: 20px
+
+  &--client_added
+    max-width: 590px
+    text-align: center
+
+    .popup__title
+      margin-bottom: 15px
+
+    .popup__text
+      margin-bottom: 15px
+
+    .button
+      max-width: 300px
+      width: 100%
+
+  &--delete
+    min-height: 180px
+    max-width: 450px
+
+    @media(min-width: 768px)
+      padding: 35px
+
+    .popup__button-block
+      display: flex
+
+    .button
+      margin-left: 2px
+      margin-right: 2px
+      width: calc(50% - 4px)
+
   &__close
     align-items: center
     background-color: none
@@ -50,8 +140,8 @@
     left: auto
     padding: 0
     position: absolute
-    right: 21px
-    top: 35px
+    right: 20px
+    top: 20px
     width: 24px
 
     &:hover,
@@ -103,10 +193,10 @@
     position: relative
 
     &::before
-      background-color: #EFEEEE
-      box-shadow: 0 4px 4px 0 rgba(#fff, 0.5), inset -4px -4px 16px 0 rgba(#fff, 0.5), inset 4px 4px 16px 0 rgba(#B4B3B1, 0.75)
+      background-color: #D6D6D6
+      box-shadow: 0 1px 1px 0 #fff
       content: ''
-      height: 4px
+      height: 2px
       display: block
       left: 0
       position: absolute
@@ -116,5 +206,26 @@
     .checkbox-label
       margin-bottom: 0
 
+  &__button-block
+    margin-top: 30px
+
+    .button--wide + .button--wide
+      margin-top: 15px
+
   .fancybox-close-small
     display: none
+
+.no-publish
+  max-width: 390px
+
+  &__title
+    color: $main-color
+    font-size: 22px
+    line-height: 21px
+    margin-bottom: 31px
+    text-align: center
+
+  &__image
+    margin-top: 55px
+    margin-bottom: 55px
+    text-align: center

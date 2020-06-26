@@ -1,5 +1,10 @@
+.fancybox-active
+  .table-responsive
+    position: relative
+    z-index: 1
+
 .table-responsive
-  min-height: 0.01%
+  min-height: 200px
   overflow-x: auto
 
 .table
@@ -14,7 +19,7 @@
         background-color: #fff
 
   th
-    border-bottom: 4px solid rgba(#B4B3B1, 0.2)
+    border-bottom: 2px solid #D6D6D6
     color: $secondary-color
     font-size: 12px
     font-weight: 400
@@ -101,10 +106,30 @@
   align-items: center
   color: $secondary-color
   display: flex
-  padding-left: 25px
+  padding-left: 33px
   position: relative
   white-space: nowrap
   z-index: 1
+
+  &::before
+    background-color: $text-color
+    content: ''
+    height: 1px
+    left: 8px
+    position: absolute
+    top: 50%
+    width: 18px
+    z-index: 1
+
+  &::after
+    background-color: $text-color
+    content: ''
+    height: 44px
+    left: 8px
+    position: absolute
+    top: -32px
+    width: 1px
+    z-index: 1
 
   &__theme
     border-radius: 8px
@@ -112,32 +137,12 @@
     font-size: 9px
     height: 24px
     line-height: 16px
-    margin-right: 10px
+    margin-left: 10px
     min-width: 72px
     padding: 4px 5px
     position: relative
     text-align: center
     text-transform: uppercase
-
-    &::before
-      background-color: $text-color
-      content: ''
-      height: 1px
-      left: -18px
-      position: absolute
-      top: 50%
-      width: 18px
-      z-index: 1
-
-    &::after
-      background-color: $text-color
-      content: ''
-      height: 44px
-      left: -18px
-      position: absolute
-      top: -32px
-      width: 1px
-      z-index: 1
 
     &--type_1
       background-color: #F2C94C
