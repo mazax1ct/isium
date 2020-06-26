@@ -824,7 +824,18 @@
 .stat-bar2
   align-items: center
   display: flex
-  margin-bottom: 5px
+
+  &:not(:last-child)
+    margin-bottom: 5px
+
+  &--small
+    .stat-bar2__bar-block,
+    .stat-bar2__bar
+      height: 14px
+
+    .stat-bar2__qnt
+      color: $secondary-color
+      font-size: 12px
 
   &__num
     color: $secondary-color
