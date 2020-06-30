@@ -9,9 +9,15 @@
 
   @media(min-width: 768px)
     box-shadow: none
-    left: -566px
+    left: -750px
     transition: left 0.3s
-    width: 566px
+    width: 750px
+
+  @media(min-width: 1200px)
+    box-shadow: none
+    left: -840px
+    transition: left 0.3s
+    width: 840px
 
   &.is-open
     @media(min-width: 768px)
@@ -37,6 +43,7 @@
 
     @media(min-width: 768px)
       height: 120px
+      min-width: 136px
       width: 136px
 
   &__logo
@@ -59,12 +66,15 @@
 
   &__partner-name
     color: $main-color
-    font-size: 22px
+    font-size: 18px
     line-height: 28px
-    max-width: 220px
+    max-width: 570px
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
+
+    @media(min-width: 1200px)
+      font-size: 22px
 
   &__partner-id
     color: $secondary-color
